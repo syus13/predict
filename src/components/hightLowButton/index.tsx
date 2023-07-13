@@ -6,7 +6,7 @@ type BtnProps = {
   changeStatus: () => void
 }
 
-export default function ButtonStatus({ inHigh, changeStatus }: BtnProps) {
+export default function HightLowButton({ inHigh, changeStatus }: BtnProps) {
   const highButtonColor = inHigh ? colors.gray500 : colors.white
   const highButtonBackground = inHigh ? colors.white : colors.success
   const lowButtonColor = inHigh ? colors.white : colors.gray500

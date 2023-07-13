@@ -1,4 +1,4 @@
-import { StyledButtonLogin } from '../buttonLogin/style'
+import { StyledButtonLogin } from './style'
 
 type buttonLoginProps = {
   onClick?: () => void
