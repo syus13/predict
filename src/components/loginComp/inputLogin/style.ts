@@ -21,9 +21,9 @@ export const StyledInput = styled.input<{
   margin-bottom: 30px;
 `
 
-export const StyledLabel = styled.div`
+export const StyledLabel = styled.div<{ selected: boolean }>`
   font-size: 14px;
-  color: ${colors.success};
+  color: ${({ selected }) => (selected ? colors.gray900 : colors.success)};
   position: absolute;
   left: 0;
   background-color: white;

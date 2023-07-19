@@ -5,7 +5,7 @@ import { colors } from '../../../themeColors'
 import { ButtonLogin } from '../btnLogin'
 import { ContainerInput, StyledEye, StyledInput, StyledLabel } from './style'
 import Selected from '../../selected'
-import { ForgotPassword } from '../../../pages/login/style'
+import { ForgotPassword } from '../../../routes/login/style'
 import { AuthUser } from '@/services/authUser'
 
 type InputProps = {

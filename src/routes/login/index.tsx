@@ -1,6 +1,4 @@
-import React from 'react'
 import Input from '../../components/loginComp/inputLogin'
-import { colors } from '../../themeColors'
 import { ContentLogin, StyledLogin, StyledSubtitle, StyledTitle } from './style'
 import BgLogin from '../../components/loginComp/bgLogin'
 

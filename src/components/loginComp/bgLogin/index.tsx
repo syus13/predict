@@ -1,4 +1,3 @@
-import React from 'react'
 import bgLoginImg from '../../../assets/image/bgLoginImg.png'
 import { StyledBgLogin } from './style'
 

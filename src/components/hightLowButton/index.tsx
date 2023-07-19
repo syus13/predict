@@ -1,5 +1,5 @@
 import { colors } from '../../themeColors'
-import * as S from './style'
+import { StyledButton, BackgroundButtonContainer } from './style'
 
 type BtnProps = {
   inHigh: boolean
@@ -25,23 +25,23 @@ export default function HightLowButton({ inHigh, changeStatus }: BtnProps) {
   }
 
   return (
-    <S.backgroundButton>
-      <S.styledButton
+    <BackgroundButtonContainer>
+      <StyledButton
         color={highButtonColor}
         backgroundColor={highButtonBackground}
         type="submit"
         onClick={handleHighButtonClick}
       >
         Em alta
-      </S.styledButton>
-      <S.styledButton
+      </StyledButton>
+      <StyledButton
         color={lowButtonColor}
         backgroundColor={lowButtonBackground}
         type="submit"
         onClick={handleLowButtonClick}
       >
         Em baixa
-      </S.styledButton>
-    </S.backgroundButton>
+      </StyledButton>
+    </BackgroundButtonContainer>
   )
 }

@@ -1,5 +1,4 @@
 import { Checkbox, StyledSelect } from './style'
-import React from 'react'
 
 type CbProps = {
   text: string

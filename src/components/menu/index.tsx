@@ -17,15 +17,3 @@ export default function Menu() {
     </StyledMenu>
   )
 }
-
-// export default function Menu() {
-//   return (
-//     <StyledMenu>
-//       <Link to="/dashboard">
-//         <StyledLogo backgroundImage={`url(${logo})`} />
-//       </Link>
-//       <MenuItens marginLeft="20px" />
-//       <BgContact />
-//     </StyledMenu>
-//   )
-// }
