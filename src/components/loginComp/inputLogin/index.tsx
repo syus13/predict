@@ -1,12 +1,17 @@
-import React, { useState } from 'react'
-import eyeOffLine from '../../../assets/icons/eyeOffLine.svg'
-import eye from '../../../assets/icons/eye.svg'
+import { useState, ChangeEvent, useContext } from 'react'
+import { eye, eyeOffLine } from '../../../assets/icons'
 import { colors } from '../../../themeColors'
 import { ButtonLogin } from '../btnLogin'
-import { ContainerInput, StyledEye, StyledInput, StyledLabel } from './style'
+import {
+  StyledContainerInput,
+  StyledEye,
+  StyledInput,
+  StyledLabel
+} from './style'
 import Selected from '../../selected'
-import { ForgotPassword } from '../../../routes/login/style'
-import { AuthUser } from '@/services/authUser'
+import { ForgotPassword } from '../../../pages/login/style'
+import AuthenticateUser from '@/apiRequest/authenticateUser'
+import { AuthContext } from '@/assets/contexts'
 
 type InputProps = {
   eyes: boolean
@@ -16,14 +21,14 @@ export default function Input({ eyes }: InputProps) {
   const [remember, setRemember] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [ShowPassword, setShowPassword] = useState(eyes)
-
+  const [showPassword, setShowPassword] = useState(eyes)
+  const { setAuth } = useContext(AuthContext)
   const togglePasswordVisibility = () => {
-    setShowPassword(!ShowPassword)
+    setShowPassword(!showPassword)
   }
 
   const login = async () => {
-    const result = await AuthUser(email, password)
+    const result = await AuthenticateUser(email, password, setAuth)
     if (result.login) {
       window.location.href = '/dashboard'
       return
@@ -31,37 +36,53 @@ export default function Input({ eyes }: InputProps) {
     alert(result.message)
   }
 
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value)
+  }
+
+  const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value)
+  }
+
   return (
     <div>
       <form>
-        <ContainerInput>
+        <StyledContainerInput>
           <StyledInput
             border={colors.success}
             id="user"
             placeholder="Insira seu e-mail"
-            onChange={e => setEmail(e.target.value)}
+            onChange={handleEmailChange}
             value={email}
           />
-          <StyledLabel htmlFor="email">E-mail</StyledLabel>
-        </ContainerInput>
+          <StyledLabel htmlFor="user" selected={false}>
+            E-mail
+          </StyledLabel>
+        </StyledContainerInput>
 
-        <ContainerInput>
+        <StyledContainerInput>
           <StyledInput
             border={colors.success}
             id="password"
-            type={ShowPassword ? 'text' : 'password'}
+            type={showPassword ? 'text' : 'password'}
             placeholder="Insira sua senha"
-            onChange={e => setPassword(e.target.value)}
+            onChange={handlePasswordChange}
             value={password}
           />
-          <StyledLabel htmlFor="senha">Senha</StyledLabel>
+          <StyledLabel htmlFor="password" selected={false}>
+            Senha
+          </StyledLabel>
 
           <StyledEye>
             <button type="button" onClick={togglePasswordVisibility}>
-              {ShowPassword ? <img src={eye} /> : <img src={eyeOffLine} />}
+              {showPassword ? (
+                <img src={eye} alt="Show Password" />
+              ) : (
+                <img src={eyeOffLine} alt="Hide Password" />
+              )}
             </button>
           </StyledEye>
-        </ContainerInput>
+        </StyledContainerInput>
       </form>
 
       <ForgotPassword>

@@ -1,4 +1,4 @@
-import { LinkMenu, Links, ContainerMenu } from './style'
+import { StyledLinkMenu, Links, ContainerMenu } from './style'
 import items from '../menuItens/arrayItens'
 import { colors } from '@/themeColors'
 
@@ -10,7 +10,7 @@ export default function MenuItens({ marginLeft }: MenuItemsProps) {
   return (
     <ContainerMenu>
       {items.map(item => (
-        <LinkMenu
+        <StyledLinkMenu
           marginLeft={marginLeft}
           key={item.id}
           color={colors.white}
@@ -18,7 +18,7 @@ export default function MenuItens({ marginLeft }: MenuItemsProps) {
         >
           {item.icon}
           <Links>{item.text}</Links>
-        </LinkMenu>
+        </StyledLinkMenu>
       ))}
     </ContainerMenu>
   )

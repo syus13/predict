@@ -4,19 +4,20 @@ import { AuthContext, AuthProvider } from '../assets/contexts'
 import Layout from '../layout'
 
 // ROUTES
-import Contact from '@/routes/contact'
 import { Spinner } from '@/components/ui'
-import Login from '@/routes/login'
+import Login from '@/pages/login'
+import DashboardPage from '@/pages/dashboard'
+import PagePredictions from '@/pages/predictions'
 
 type RoutesPrivateProps = {
   children: ReactNode
 }
 
 const RoutesPrivate = ({ children }: RoutesPrivateProps) => {
-  const { auth } = useContext(AuthContext)
-  if (!auth) {
-    return <Navigate to="/" />
-  }
+  // const { auth } = useContext(AuthContext)
+  // if (!auth) {
+  //   return <Navigate to="/" />
+  // }
 
   return <Layout>{children}</Layout>
 }
@@ -28,27 +29,22 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/contact',
-    element: <Contact />
+    path: '/dashboard',
+    element: (
+      <RoutesPrivate>
+        <DashboardPage />
+      </RoutesPrivate>
+    )
+  },
+
+  {
+    path: '/predicoes',
+    element: (
+      <RoutesPrivate>
+        <PagePredictions />
+      </RoutesPrivate>
+    )
   }
-
-  // {
-  //   path: '/dashboard',
-  //   element: (
-  //     <RoutesPrivate>
-  //       <PageDashboard />
-  //     </RoutesPrivate>
-  //   )
-  // },
-
-  // {
-  //   path: '/predicoes',
-  //   element: (
-  //     <RoutesPrivate>
-  //       <PagePredicoes />
-  //     </RoutesPrivate>
-  //   )
-  // },
 
   // {
   //   path: '/informacoesclientes/:id',

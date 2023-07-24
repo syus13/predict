@@ -1,12 +1,21 @@
-import React, { ReactNode, useEffect, useState, createContext } from 'react'
-import api from '../../services/configApi'
+import {
+  ReactNode,
+  useEffect,
+  useState,
+  createContext,
+  Dispatch,
+  SetStateAction
+} from 'react'
+import api from '../../apiRequest/configApi'
 
 type ContextType = {
   auth: boolean
+  setAuth: Dispatch<SetStateAction<boolean>>
 }
 
 export const AuthContext = createContext<ContextType>({
-  auth: false
+  auth: false,
+  setAuth: () => []
 })
 
 type AuthProviderProps = {
@@ -32,6 +41,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }
 
   return (
-    <AuthContext.Provider value={{ auth }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ auth, setAuth }}>
+      {children}
+    </AuthContext.Provider>
   )
 }

@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
-import ArrowCD from '../../assets/icons/chevronDown.svg'
-import UserIcon from '../../assets/icons/user.svg'
+import { user, chevronDown } from '../../assets/icons'
 import Title from '../titles'
-import UserLogged, { UserLoggedProps } from '../../services/userLogged'
+import UserLogged, { UserLoggedProps } from '../../apiRequest/userLogged'
 import { BgIcon, Logged, StyledTop, StyledUser } from './style'
 import Settings from '../settings'
 
@@ -55,11 +54,11 @@ export default function PageTop({ width }: TopProps) {
       <StyledTop width={width}>
         <Logged>
           <BgIcon>
-            <img src={UserIcon} />
+            <img src={user} />
           </BgIcon>
           <User name={logged?.nome ?? ''} email={logged?.email ?? ''} />
           <button onClick={handleOpen} type="button">
-            <img src={ArrowCD} />
+            <img src={chevronDown} />
           </button>
         </Logged>
       </StyledTop>

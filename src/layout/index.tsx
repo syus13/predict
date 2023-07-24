@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import Menu from '../components/menu'
 import PageTop from '../components/pagetop'
 import { StyledContainer, StyledPage, Wrapper } from './style'

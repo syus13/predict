@@ -6,6 +6,9 @@ export const StyledDashboardCard = styled.div<{
   width: string
   paddingBottom?: string
   boxShadow?: string
+  title: string
+  colorTitle: string
+  circleBar: string
 }>`
   display: flex;
   justify-content: space-start;

@@ -5,7 +5,10 @@ export const ContainerMenu = styled.div`
   margin-bottom: 50px;
 `
 
-export const LinkMenu = styled(Link)<{ color: string; marginLeft?: string }>`
+export const StyledLinkMenu = styled(Link)<{
+  color: string
+  marginLeft?: string
+}>`
   font-family: Poppins;
   cursor: pointer;
   display: flex;

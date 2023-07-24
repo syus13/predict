@@ -9,7 +9,7 @@ export type UserLoggedProps = {
 
 export default async function UserLogged(): Promise<UserLoggedProps> {
   try {
-    const result = await api.get('central/usuario/me')
+    const result = await api.get('/central/usuario/me')
 
     if (result.status === 200) {
       return result.data

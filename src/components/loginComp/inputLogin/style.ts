@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { colors } from '../../../themeColors'
 
-export const ContainerInput = styled.div`
+export const StyledContainerInput = styled.div`
   display: flex;
   position: relative;
   width: 400px;
@@ -21,7 +21,23 @@ export const StyledInput = styled.input<{
   margin-bottom: 30px;
 `
 
-export const StyledLabel = styled.div<{ selected: boolean }>`
+// export const StyledLabel = styled.div<{ selected: boolean }>`
+//   font-size: 14px;
+//   color: ${({ selected }) => (selected ? colors.gray900 : colors.success)};
+//   position: absolute;
+//   left: 0;
+//   background-color: white;
+//   margin-left: 20px;
+//   margin-top: -10px;
+//   padding: 0 5px;
+// `
+
+interface StyledLabelProps {
+  htmlFor: string
+  selected: boolean
+}
+
+export const StyledLabel = styled.div<StyledLabelProps>`
   font-size: 14px;
   color: ${({ selected }) => (selected ? colors.gray900 : colors.success)};
   position: absolute;

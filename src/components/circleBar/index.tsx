@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react'
-import ApexCharts from 'apexcharts'
+import { useEffect, useRef } from 'react'
+import * as ApexCharts from 'apexcharts'
 import { colors } from '../../themeColors'
 
 type CircleBarProps = {
@@ -22,7 +22,7 @@ const CircleBar: React.FC<CircleBarProps> = ({ value }) => {
 function getOptions(value: number) {
   return {
     chart: {
-      type: 'radialBar',
+      type: 'circleBar',
       width: 70,
       height: 70,
       sparkline: {
@@ -30,7 +30,7 @@ function getOptions(value: number) {
       }
     },
     plotOptions: {
-      radialBar: {
+      circleBar: {
         hollow: {
           size: '45%'
         },

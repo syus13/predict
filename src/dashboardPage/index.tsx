@@ -9,7 +9,7 @@ import {
   StyledDashboardContainer
 } from './style'
 import CircleBar from '../components/circleBar'
-import GetSummaryData, { ResumeDashboard } from '../services/getDashboard'
+import GetSummaryData, { ResumeDashboard } from '../apiRequest/getDashboard'
 
 type CalendarProps = {
   date: { end: string; start: string }
@@ -39,10 +39,10 @@ export default function Dashboard({ date, setDate }: CalendarProps) {
         </StyledTitle>
         <StyledCardContainer>
           <StyledDashboardCard
-            text="Total"
+            title="Total"
             colorTitle={colors.white}
             circleBar={
-              <CircleBar series={summary?.percentualTotalProdutosAlta || 0} />
+              <CircleBar value={summary?.percentualTotalProdutosAlta || 0} />
             }
             type="produtos"
             status="em alta"
@@ -54,10 +54,10 @@ export default function Dashboard({ date, setDate }: CalendarProps) {
             width="250px"
           />
           <StyledDashboardCard
-            text="Total"
+            title="Total"
             colorTitle={colors.white}
             circleBar={
-              <CircleBar series={summary?.percentualTotalProdutosBaixa || 0} />
+              <CircleBar value={summary?.percentualTotalProdutosBaixa || 0} />
             }
             type="produtos"
             status="em baixa"
@@ -69,10 +69,10 @@ export default function Dashboard({ date, setDate }: CalendarProps) {
             width="250px"
           />
           <StyledDashboardCard
-            text="Total"
+            title="Total"
             colorTitle={colors.white}
             circleBar={
-              <CircleBar series={summary?.percentualTotalClientesAlta || 0} />
+              <CircleBar value={summary?.percentualTotalClientesAlta || 0} />
             }
             type="clientes"
             status="em alta"
@@ -84,10 +84,10 @@ export default function Dashboard({ date, setDate }: CalendarProps) {
             width="250px"
           />
           <StyledDashboardCard
-            text="Total"
+            title="Total"
             colorTitle={colors.white}
             circleBar={
-              <CircleBar series={summary?.percentualTotalClientesBaixa || 0} />
+              <CircleBar value={summary?.percentualTotalClientesBaixa || 0} />
             }
             type="clientes"
             status="em baixa"

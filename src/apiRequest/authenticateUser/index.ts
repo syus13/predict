@@ -1,7 +1,12 @@
 import { isAxiosError } from 'axios'
 import api from '../configApi'
+import { Dispatch, SetStateAction } from 'react'
 
-export async function AuthUser(email: string, senha: string) {
+export default async function AuthenticateUser(
+  email: string,
+  senha: string,
+  setAuth: Dispatch<SetStateAction<boolean>>
+) {
   try {
     const result = await api.post('/central/autenticacao/login', {
       email,
@@ -11,6 +16,7 @@ export async function AuthUser(email: string, senha: string) {
     if (result.status === 200) {
       api.defaults.headers.common.Authorization = `${result.data.type} ${result.data.token}`
       localStorage.setItem('token', JSON.stringify(result.data))
+      setAuth(true)
       return { login: true }
     }
   } catch (error) {

@@ -10,7 +10,7 @@ type TitleProps = {
 }
 
 type CardTitleProps = {
-  tipo: string
+  type: string
   status: string
   text?: string
   color: string
@@ -35,11 +35,11 @@ export default function Title({
   )
 }
 
-export function CardTitle({ tipo, status, text, color }: CardTitleProps) {
+export function CardTitle({ type, status, text, color }: CardTitleProps) {
   return (
     <TitleCardDasboard color={color}>
       <span>
-        {text} <strong>{tipo}</strong> {status}
+        {text} <strong>{type}</strong> {status}
       </span>
     </TitleCardDasboard>
   )
