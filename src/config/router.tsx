@@ -8,6 +8,7 @@ import { Spinner } from '@/components/ui'
 import Login from '@/pages/login'
 import DashboardPage from '@/pages/dashboard'
 import PagePredictions from '@/pages/predictions'
+import CustomerInformationDetail from '../pages/predictionDetail'
 
 type RoutesPrivateProps = {
   children: ReactNode
@@ -44,43 +45,16 @@ const router = createBrowserRouter([
         <PagePredictions />
       </RoutesPrivate>
     )
+  },
+
+  {
+    path: '/informacoesclientes/:id',
+    element: (
+      <RoutesPrivate>
+        <CustomerInformationDetail />
+      </RoutesPrivate>
+    )
   }
-
-  // {
-  //   path: '/informacoesclientes/:id',
-  //   element: (
-  //     <RoutesPrivate>
-  //       <SubScreenPrediction />
-  //     </RoutesPrivate>
-  //   )
-  // },
-
-  // {
-  //   path: '/informacoesprodutos/:id',
-  //   element: (
-  //     <RoutesPrivate>
-  //       <SubScreenProduct />
-  //     </RoutesPrivate>
-  //   )
-  // },
-
-  // {
-  //   path: '/informacoesprodutosclientes/:id',
-  //   element: (
-  //     <RoutesPrivate>
-  //       <SubScreenProductClient />
-  //     </RoutesPrivate>
-  //   )
-  // },
-
-  // {
-  //   path: '/produtos',
-  //   element: (
-  //     <RoutesPrivate>
-  //       <PageProduct />
-  //     </RoutesPrivate>
-  //   )
-  //}
 ])
 
 export default function Router() {

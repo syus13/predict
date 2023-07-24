@@ -33,7 +33,7 @@ const tableHeaderWithEnding = [
   'Dar baixa'
 ]
 
-export default function CustomerPredictionDetail() {
+export default function CustomerInformationDetail() {
   const [historyData, setHistoryData] = useState<GetHistoricalPredictionProps>(
     []
   )
