@@ -1,25 +1,27 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { colors } from '../../themeColors'
 import {
   GetHistoricalPrediction,
   GetHistoricalPredictionProps
-} from '@/apiRequest/getPrediction/historic'
-import { GetClient, GetClientProps } from '@/apiRequest/getPrediction/client'
+} from '../../apiRequest/getPrediction/historic'
+import {
+  GetClient,
+  GetClientProps
+} from '../../apiRequest/getPrediction/client'
 import {
   GetEndingPrediction,
   GetEndingPredictionProps
-} from '@/apiRequest/getPrediction/ending'
-import { GetLowPrediction } from '@/apiRequest/getPrediction/low'
-import TitleIcon from '@/components/titleWI'
-import { StyledLinkMenu } from '@/components/menuItens/style'
-import { StyledCheckIcon } from '@/components/cardPrediction/style'
+} from '../../apiRequest/getPrediction/ending'
+import { GetLowPrediction } from '../../apiRequest/getPrediction/low'
+import TitleIcon from '../../components/titleWI'
+import { StyledLinkMenu } from '../../components/menuItens/style'
+import { StyledCheckIcon } from '../../components/cardPrediction/style'
 import { StyledContainerTable } from '../dashboard/style'
 import { arrowLeft, check, facialCleanser, history } from '../../assets/icons'
 import DataClient from '../../components/dataClient'
-
-import { SubScreenContainer } from '../../components/CelEmail/styles'
-import { ProductTable } from '../../components/ProductTable'
+import { ContainerDetails } from './style'
+import ProductsTable from '../../components/productsTable'
 
 const tableHeader = ['ID', 'Produto', 'Última compra', 'Qtd.', 'Dar baixa']
 const tableHeaderWithEnding = [
@@ -75,7 +77,7 @@ export default function CustomerPredictionDetail() {
   }, [])
 
   return (
-    <SubScreenContainer>
+    <ContainerDetails>
       <StyledContainerTable>
         <StyledLinkMenu
           marginLeft="0px"
@@ -101,7 +103,7 @@ export default function CustomerPredictionDetail() {
         />
       </StyledContainerTable>
       <StyledContainerTable>
-        <ProductTable
+        <ProductsTable
           button=""
           width="45%"
           headers={tableHeader}
@@ -132,8 +134,8 @@ export default function CustomerPredictionDetail() {
               </td>
             </tr>
           ))}
-        </ProductTable>
-        <ProductTable
+        </ProductsTable>
+        <ProductsTable
           button=""
           width="53%"
           headers={tableHeaderWithEnding}
@@ -165,8 +167,8 @@ export default function CustomerPredictionDetail() {
               </td>
             </tr>
           ))}
-        </ProductTable>
+        </ProductsTable>
       </StyledContainerTable>
-    </SubScreenContainer>
+    </ContainerDetails>
   )
 }

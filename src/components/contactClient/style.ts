@@ -12,11 +12,6 @@ export const ContactClientStyle = styled.div`
   margin-top: 5px;
 `
 
-export const ContainerSubScreen = styled.div`
-  width: 100%;
-  background-color: ${colors.white};
-  margin-top: 100px;
-`
 export const StyledIcon = styled.div`
   margin-right: 10px;
 `

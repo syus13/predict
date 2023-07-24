@@ -19,7 +19,7 @@ type PaginationProps = {
   changePage: (page: number) => void
 }
 
-export function Pagination({
+export default function Pagination({
   totalPagesListed,
   totalPagesListedInAPI,
   currentPage,
