@@ -45,16 +45,16 @@ const router = createBrowserRouter([
         <PagePredictions />
       </RoutesPrivate>
     )
-  },
-
-  {
-    path: '/informacoesclientes/:id',
-    element: (
-      <RoutesPrivate>
-        <CustomerInformationDetail />
-      </RoutesPrivate>
-    )
   }
+
+  // {
+  //   path: '/informacoesclientes/:id',
+  //   element: (
+  //     <RoutesPrivate>
+  //       <CustomerInformationDetail />
+  //     </RoutesPrivate>
+  //   )
+  // }
 ])
 
 export default function Router() {

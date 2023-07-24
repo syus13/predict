@@ -16,15 +16,6 @@ export default function PagePredictions() {
   const [listPrediction, setListPrediction] =
     useState<GetListPredictionProps | null>(null)
 
-  // const startSearch = async () => {
-  //   try {
-  //     const result = await GetListPrediction(searchTerm)
-  //     setListPrediction(result)
-  //   } catch (error) {
-  //     alert(error.message)
-  //   }
-  // }
-
   const startSearch = async () => {
     try {
       const result = await GetListPrediction(searchTerm)
