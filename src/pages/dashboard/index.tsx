@@ -114,7 +114,7 @@ export default function DashboardPage() {
               background={colors.blue4}
               color={colors.gray900}
               icon={<img src={facialCleanser} color={colors.blue1} />}
-              title="Products"
+              title="Produtos"
             />
           }
           button={
@@ -144,7 +144,7 @@ export default function DashboardPage() {
               background={colors.blue1}
               color={colors.gray900}
               icon={<img src={everyUser} />}
-              title="Clients"
+              title="Clientes"
             />
           }
           button={
