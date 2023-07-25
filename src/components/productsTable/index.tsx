@@ -1,6 +1,7 @@
-import React, { ReactNode } from 'react'
-import Pagination from '../pagination'
+import { ReactNode } from 'react'
+
 import { ContainerStatus, StyledTable, StyledProductsTable } from './style'
+import Pagination from '../pagination'
 
 type ProductsTableProps = {
   children: ReactNode
