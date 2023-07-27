@@ -9,7 +9,14 @@ export type UserLoggedProps = {
 
 export default async function UserLogged(): Promise<UserLoggedProps> {
   try {
-    const result = await api.get('/central/usuario/me')
+    const token = localStorage.getItem('AUTH-TOKEN')
+    const result = await api.get('/central/usuario/me', {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+        'X-TENANT-ID': 'arnia'
+      }
+    })
 
     if (result.status === 200) {
       return result.data
@@ -28,5 +35,5 @@ export default async function UserLogged(): Promise<UserLoggedProps> {
       }
     }
   }
-  throw new Error('Página em manutenção')
+  throw new Error('Page under maintenance')
 }

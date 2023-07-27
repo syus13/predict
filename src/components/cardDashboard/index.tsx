@@ -4,7 +4,7 @@ import { CardTitle } from '../titles'
 import DashboardCardValue from '../cardDasboardValue'
 
 type DashboardCardProps = {
-  circleBar?: ReactNode
+  radialBar?: ReactNode
   type: string
   status: string
   description?: string
@@ -19,8 +19,8 @@ type DashboardCardProps = {
   boxShadow?: string
 }
 
-export function DashboardCard({
-  circleBar,
+export default function DashboardCard({
+  radialBar,
   type,
   status,
   description,
@@ -43,7 +43,7 @@ export function DashboardCard({
       width={width}
       backgroundColor={cardBackground}
     >
-      <div>{circleBar}</div>
+      <div>{radialBar}</div>
       <div>
         <CardTitle
           color={titleColor}

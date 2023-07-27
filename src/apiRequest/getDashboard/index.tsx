@@ -21,10 +21,16 @@ export default async function GetSummaryData(
   dataFim: string
 ): Promise<ResumeDashboard> {
   try {
-    const response = await api.get('/dashboard/resumo', {
+    const token = localStorage.getItem('AUTH-TOKEN')
+    const response = await api.get('/app/dashboard/resumo', {
       params: {
         dataFim,
         dataInicio
+      },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+        'X-TENANT-ID': 'arnia'
       }
     })
 
@@ -36,7 +42,7 @@ export default async function GetSummaryData(
       const status = error.response?.status
       switch (status) {
         case 401:
-          throw new Error('Operação não autorizada')
+          throw new Error('Operação não autorizada 1')
         case 403:
           throw new Error('Usuário não tem permissão de acesso')
         case 404:

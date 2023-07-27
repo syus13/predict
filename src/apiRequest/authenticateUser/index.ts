@@ -8,14 +8,19 @@ export default async function AuthenticateUser(
   setAuth: Dispatch<SetStateAction<boolean>>
 ) {
   try {
-    const result = await api.post('/central/autenticacao/login', {
-      email,
-      senha
-    })
+    const result = await api.post(
+      '/central/autenticacao/login',
+      { email: email, senha: senha },
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    )
 
     if (result.status === 200) {
       api.defaults.headers.common.Authorization = `${result.data.type} ${result.data.token}`
-      localStorage.setItem('token', JSON.stringify(result.data))
+      localStorage.setItem('AUTH-TOKEN', result.data.token)
       setAuth(true)
       return { login: true }
     }
@@ -32,5 +37,5 @@ export default async function AuthenticateUser(
       }
     }
   }
-  return { login: false, message: 'Erro' }
+  return { login: false, message: 'Page under maintenance' }
 }

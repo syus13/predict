@@ -1,5 +1,6 @@
 import twohands from '../../../assets/image/twohands.png'
-import { StyledContactUs, BtnContactUs } from './style'
+import { StyledContactUs } from './style'
+import BtnContactUs from '../btnContactUs'
 
 export default function BgContact() {
   return (
@@ -7,12 +8,10 @@ export default function BgContact() {
       <div>
         <img src={twohands} alt="duas mãos" />
       </div>
-
       <div>
         Precisando de <span>ajuda ou suporte</span> em algo?
       </div>
-
-      <BtnContactUs type="button">Fale conosco</BtnContactUs>
+      <BtnContactUs text="Fale conosco" />
     </StyledContactUs>
   )
 }

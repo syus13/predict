@@ -2,7 +2,6 @@ import { ChangeEvent } from 'react'
 import { research } from '../../assets/icons'
 import { colors } from '../../themeColors'
 import { ContainerResearch, StyledResearchPrediction } from './style'
-
 import {
   StyledContainerInput,
   StyledInput
@@ -19,7 +18,7 @@ type FilterProps = {
   startSearch: () => void
 }
 
-export function ResearchPrediction({
+export default function ResearchPrediction({
   icon,
   boxShadow,
   paddingLeft,

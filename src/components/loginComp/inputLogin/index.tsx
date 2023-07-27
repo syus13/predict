@@ -87,7 +87,7 @@ export default function Input({ eyes }: InputProps) {
 
       <ForgotPassword>
         <Selected
-          checked={remember}
+          selected={remember}
           onChange={() => setRemember(!remember)}
           text="Lembrar-me"
           fontSize="12px"

@@ -6,6 +6,11 @@ export const StyledDashboardCard = styled.div<{
   paddingBottom?: string
   boxShadow?: string
 }>`
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.2px;
   display: flex;
   justify-content: space-start;
   align-items: center;

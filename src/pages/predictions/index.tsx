@@ -4,7 +4,7 @@ import Title from '@/components/titles'
 import CardPrediction from '../../components/cardPrediction'
 import { StyledDashboardContainer } from '@/dashboardPage/style'
 import { ContainerCard } from './style'
-import { ResearchPrediction } from '@/components/researchPrediction'
+import ResearchPrediction from '@/components/researchPrediction'
 import GetListPrediction, {
   GetListPredictionProps
 } from '../../apiRequest/getPrediction/List'

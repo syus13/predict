@@ -9,6 +9,7 @@ import everyUser from './everyUSer.svg'
 import eye from './eye.svg'
 import eyeOffLine from './eyeOffLine.svg'
 import facialCleanser from './facialCleanser.svg'
+import filterIcon from './filter.svg'
 import history from './history.svg'
 import logout from './logout.svg'
 import mailIcon from './mail.svg'
@@ -16,6 +17,8 @@ import phoneIcon from './phone.svg'
 import pieTwo from './pieTwo.svg'
 import research from './research.svg'
 import settingTwo from './settingTwo.svg'
+import trendingDown from './trendingDown.svg'
+import trendingUp from './trendingUp.svg'
 import user from './user.svg'
 import userCard from './userCard.svg'
 
@@ -31,6 +34,7 @@ export {
   eye,
   eyeOffLine,
   facialCleanser,
+  filterIcon,
   history,
   logout,
   mailIcon,
@@ -38,6 +42,8 @@ export {
   pieTwo,
   research,
   settingTwo,
+  trendingDown,
+  trendingUp,
   user,
   userCard
 }

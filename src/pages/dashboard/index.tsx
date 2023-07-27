@@ -11,9 +11,8 @@ import GetProductsDashboard, {
 } from '@/apiRequest/getSummaryDashboard/product'
 import GetClientsDashboard from '@/apiRequest/getSummaryDashboard/client'
 import { chevronRight, everyUser, facialCleanser } from '@/assets/icons'
-import ProductTable from '../../components/productTable'
-
-const ProductTableTitle = ['ID', 'Produto', 'Percentual', ' ']
+import ProductsTable from '@/components/productsTable'
+const ProductsTableTitle = ['ID', 'Produto', 'Percentual', ' ']
 const ClientTableTitle = ['ID', 'Cliente', 'Percentual', ' ']
 
 type DashboardData = {
@@ -48,9 +47,9 @@ export default function DashboardPage() {
   const [highClients, setHighClients] = useState(false)
   const [dates, setDates] = useState(dateUtils.getThisMonth())
 
-  const [productTableData, setProductTableData] = useState<GetProductsProps[]>(
-    []
-  )
+  const [productsTableData, setProductsTableData] = useState<
+    GetProductsProps[]
+  >([])
   const [clientTableData, setClientTableData] = useState<GetProductsProps[]>([])
 
   const toggleHighProducts = () => {
@@ -70,7 +69,7 @@ export default function DashboardPage() {
         dates.start,
         highProducts ? 'EM_BAIXA' : 'EM_ALTA'
       )
-      setProductTableData(resultProducts)
+      setProductsTableData(resultProducts)
     } catch (error: any) {
       alert(error.message)
     }
@@ -78,12 +77,12 @@ export default function DashboardPage() {
 
   async function fetchClientData() {
     try {
-      const resultClients: GetProductsProps = await GetClientsDashboard(
+      const resultClients: GetProductsProps[] = await GetClientsDashboard(
         dates.end,
         dates.start,
         highClients ? 'EM_BAIXA' : 'EM_ALTA'
       )
-      setClientTableData([resultClients])
+      setClientTableData(resultClients)
     } catch (error: any) {
       alert(error.message)
     }
@@ -106,7 +105,7 @@ export default function DashboardPage() {
       <Dashboard setDate={setDates} date={dates} />
 
       <StyledContainerTable>
-        <ProductTable
+        <ProductsTable
           title={
             <TitleIcon
               marginLeft="10px"
@@ -123,10 +122,10 @@ export default function DashboardPage() {
               changeStatus={toggleHighProducts}
             />
           }
-          width="49%"
-          headers={ProductTableTitle}
+          width="50%"
+          headers={ProductsTableTitle}
         >
-          {productTableData.map(dashboardData => (
+          {productsTableData.map(dashboardData => (
             <TableRow
               key={dashboardData.id}
               dashboardData={dashboardData}
@@ -134,9 +133,9 @@ export default function DashboardPage() {
               navigate={goToPage}
             />
           ))}
-        </ProductTable>
+        </ProductsTable>
 
-        <ProductTable
+        <ProductsTable
           title={
             <TitleIcon
               marginLeft="10px"
@@ -153,7 +152,7 @@ export default function DashboardPage() {
               changeStatus={toggleHighClients}
             />
           }
-          width="49%"
+          width="50%"
           headers={ClientTableTitle}
         >
           {clientTableData.map(dashboardData => (
@@ -164,7 +163,7 @@ export default function DashboardPage() {
               navigate={goToPage}
             />
           ))}
-        </ProductTable>
+        </ProductsTable>
       </StyledContainerTable>
     </div>
   )

@@ -8,10 +8,10 @@ export const StyledDashboardCard = styled.div<{
   boxShadow?: string
   title: string
   colorTitle: string
-  circleBar: string
+  radialBar: string
 }>`
   display: flex;
-  justify-content: space-start;
+  justify-content: space-between;
   align-items: center;
   background: ${({ backgroundColor }) => `${backgroundColor}`};
   width: ${({ width }) => `${width}`};
@@ -44,7 +44,7 @@ export const StyledDashboardContainer = styled.div`
 
 export const StyledCardContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 `
 
@@ -52,7 +52,16 @@ export const StyledTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  //margin-bottom: 30px;
+  margin-bottom: 30px;
+
+  > span {
+    font-family: 'Sora';
+    color: ${colors.white};
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+  }
 `
 
 export const RadialBarStyles = styled.div`

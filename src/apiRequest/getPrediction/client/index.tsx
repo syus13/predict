@@ -9,21 +9,29 @@ export type GetClientProps = {
 
 export async function GetClient(id: string): Promise<GetClientProps> {
   try {
-    const result = await api.get(`/app/cliente/${id}`)
+    const token = localStorage.getItem('AUTH-TOKEN')
+    const result = await api.get(`/app/cliente/${id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+        'X-TENANT-ID': 'arnia'
+      }
+    })
 
     if (result.status === 200) {
       return result.data
     }
   } catch (error) {
     if (isAxiosError(error)) {
-      if (error.response?.status === 401) {
-        throw new Error('Unauthorized')
-      }
-      if (error.response?.status === 403) {
-        throw new Error('Forbidden')
-      }
-      if (error.response?.status === 404) {
-        throw new Error('Not Found')
+      const { status } = error.response || {}
+
+      switch (status) {
+        case 401:
+          throw new Error('Unauthorized')
+        case 403:
+          throw new Error('Forbidden')
+        case 404:
+          throw new Error('Not Found')
       }
     }
   }

@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-
 import { ContainerStatus, StyledTable, StyledProductsTable } from './style'
 import Pagination from '../pagination'
 

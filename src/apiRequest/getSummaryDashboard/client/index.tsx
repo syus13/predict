@@ -6,15 +6,21 @@ export default async function GetClientsDashboard(
   dataInicio: string,
   dataFim: string,
   classificacao: 'EM_BAIXA' | 'EM_ALTA'
-): Promise<GetProductsProps> {
+): Promise<GetProductsProps[]> {
   try {
-    const result: AxiosResponse<GetProductsProps> = await api.get(
+    const token = localStorage.getItem('AUTH-TOKEN')
+    const result: AxiosResponse<GetProductsProps[]> = await api.get(
       '/app/dashboard/clientes',
       {
         params: {
           dataFim,
           dataInicio,
           classificacao
+        },
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+          'X-TENANT-ID': 'arnia'
         }
       }
     )

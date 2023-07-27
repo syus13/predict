@@ -9,16 +9,17 @@ import Login from '@/pages/login'
 import DashboardPage from '@/pages/dashboard'
 import PagePredictions from '@/pages/predictions'
 import CustomerInformationDetail from '../pages/predictionDetail'
+import ProductInformationDetail from '../pages/productDetail/index'
 
 type RoutesPrivateProps = {
   children: ReactNode
 }
 
 const RoutesPrivate = ({ children }: RoutesPrivateProps) => {
-  // const { auth } = useContext(AuthContext)
-  // if (!auth) {
-  //   return <Navigate to="/" />
-  // }
+  const { auth } = useContext(AuthContext)
+  if (!auth && !localStorage.getItem('AUTH-TOKEN')) {
+    return <Navigate to="/" />
+  }
 
   return <Layout>{children}</Layout>
 }
@@ -45,16 +46,43 @@ const router = createBrowserRouter([
         <PagePredictions />
       </RoutesPrivate>
     )
+  },
+
+  {
+    path: '/informacoesclientes/:id',
+    element: (
+      <RoutesPrivate>
+        <CustomerInformationDetail />
+      </RoutesPrivate>
+    )
+  },
+
+  {
+    path: '/informacoesprodutos/:id',
+    element: (
+      <RoutesPrivate>
+        <ProductInformationDetail />
+      </RoutesPrivate>
+    )
   }
 
   // {
-  //   path: '/informacoesclientes/:id',
+  //   path: '/informacoesprodutosclientes/:id',
   //   element: (
   //     <RoutesPrivate>
-  //       <CustomerInformationDetail />
+  //       < />
   //     </RoutesPrivate>
   //   )
-  // }
+  // },
+
+  // {
+  //   path: '/produtos',
+  //   element: (
+  //     <RoutesPrivate>
+  //       < />
+  //     </RoutesPrivate>
+  //   )
+  //}
 ])
 
 export default function Router() {

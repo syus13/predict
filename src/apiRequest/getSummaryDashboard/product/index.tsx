@@ -13,11 +13,17 @@ export default async function GetProductsDashboard(
   classificacao: 'EM_ALTA' | 'EM_BAIXA'
 ): Promise<GetProductsProps[]> {
   try {
+    const token = localStorage.getItem('AUTH-TOKEN')
     const response = await api.get('/app/dashboard/produtos', {
       params: {
         dataFim,
         dataInicio,
         classificacao
+      },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+        'X-TENANT-ID': 'arnia'
       }
     })
 

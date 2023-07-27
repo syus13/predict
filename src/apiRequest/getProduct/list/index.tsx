@@ -1,15 +1,12 @@
 import { isAxiosError } from 'axios'
 import api from '../../configApi'
 
-export type GetListPredictionProps = {
+export type GetListProductProps = {
   content: {
+    classificacao: 'EM_ALTA' | 'EM_BAIXA'
     id: number
     nome: string
-    produtos: {
-      id: number
-      nome: string
-      proximaCompra: string
-    }[]
+    percentual: number
   }[]
 
   empty: true
@@ -39,14 +36,19 @@ export type GetListPredictionProps = {
   totalPages: number
 }
 
-export default async function GetListPrediction(
-  query: string
-): Promise<GetListPredictionProps> {
+export default async function GetListProduct(
+  query: string,
+  page: number,
+  classificacao?: 'EM_ALTA' | 'EM_BAIXA'
+): Promise<GetListProductProps> {
   try {
     const token = localStorage.getItem('AUTH-TOKEN')
-    const result = await api.get('/app/predicao', {
+    const result = await api.get('/app/produto', {
       params: {
-        query
+        query,
+        classificacao,
+        page: page - 1,
+        size: 7
       },
       headers: {
         'Content-Type': 'application/json',

@@ -1,25 +1,29 @@
 import { isAxiosError } from 'axios'
 import api from '../../configApi'
 
-export type GetHistoricalPredictionProps = {
-  id: number
+export type GetSummaryClientProps = {
+  media120Dias: number
   nome: string
-  quantidade: number
-  ultimaCompra: string
-}[]
+  percentualUltimos30Dias: number
+  ultimos120Dias: number
+  ultimos30Dias: number
+  ultimos60Dias: number
+  ultimos90Dias: number
+}
 
-export async function GetHistoricalPrediction(
+export async function GetSummaryClient(
   id: string
-): Promise<GetHistoricalPredictionProps> {
+): Promise<GetSummaryClientProps> {
   try {
     const token = localStorage.getItem('AUTH-TOKEN')
-    const result = await api.get(`/app/predicao/${id}/historico`, {
+    const result = await api.get(`/app/cliente/${id}/resumo`, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
         'X-TENANT-ID': 'arnia'
       }
     })
+
     if (result.status === 200) {
       return result.data
     }

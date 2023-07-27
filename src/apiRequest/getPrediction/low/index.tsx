@@ -12,8 +12,14 @@ export async function GetLowPrediction(
   produtoId: number
 ): Promise<{ baixa: true }> {
   try {
+    const token = localStorage.getItem('AUTH-TOKEN')
     const result = await api.post(`/app/predicao/${id}/baixa`, {
-      produtoId
+      produtoId,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+        'X-TENANT-ID': 'arnia'
+      }
     })
 
     if (result.status === 200) {

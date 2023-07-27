@@ -3,19 +3,19 @@ import { Checkbox, StyledSelect } from './style'
 type CbProps = {
   text: string
   fontSize: string
-  checked: boolean
+  selected: boolean
   onChange: () => void
 }
 
 export default function Selected({
   text,
   fontSize,
-  checked,
+  selected,
   onChange
 }: CbProps) {
   return (
     <StyledSelect fontSize={fontSize}>
-      <Checkbox checked={checked} type="checkbox" onChange={onChange} />
+      <Checkbox checked={selected} type="checkbox" onChange={onChange} />
       <span>{text}</span>
     </StyledSelect>
   )

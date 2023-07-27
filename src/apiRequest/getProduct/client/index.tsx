@@ -1,25 +1,30 @@
 import { isAxiosError } from 'axios'
 import api from '../../configApi'
 
-export type GetHistoricalPredictionProps = {
+export type GetProductClientProps = {
+  quantidade: number
   id: number
   nome: string
-  quantidade: number
-  ultimaCompra: string
+  percentual: number
 }[]
 
-export async function GetHistoricalPrediction(
-  id: string
-): Promise<GetHistoricalPredictionProps> {
+export default async function GetProductClient(
+  id: string,
+  classificacao: 'EM_ALTA' | 'EM_BAIXA'
+): Promise<GetProductClientProps> {
   try {
     const token = localStorage.getItem('AUTH-TOKEN')
-    const result = await api.get(`/app/predicao/${id}/historico`, {
+    const result = await api.get(`/app/produto/${id}/clientes`, {
+      params: {
+        classificacao
+      },
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
         'X-TENANT-ID': 'arnia'
       }
     })
+
     if (result.status === 200) {
       return result.data
     }

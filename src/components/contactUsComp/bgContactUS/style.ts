@@ -28,7 +28,7 @@ export const StyledContactUs = styled.div`
   }
 `
 
-export const BtnContactUs = styled.button`
+export const StyledBtnContactUs = styled.button`
   font-family: 'Poppins';
   width: 100%;
   height: 50px;

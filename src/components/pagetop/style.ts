@@ -8,7 +8,7 @@ export const StyledTop = styled.div<{ width: string }>`
   width: ${({ width }) => `${width}`};
   height: 90px;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
   background-color: ${colors.white};
   z-index: 1;

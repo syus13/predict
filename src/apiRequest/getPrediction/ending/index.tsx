@@ -13,7 +13,14 @@ export async function GetEndingPrediction(
   id: string
 ): Promise<GetEndingPredictionProps> {
   try {
-    const result = await api.get(`/app/predicao/${id}/esgotando`)
+    const token = localStorage.getItem('AUTH-TOKEN')
+    const result = await api.get(`/app/predicao/${id}/esgotando`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+        'X-TENANT-ID': 'arnia'
+      }
+    })
 
     if (result.status === 200) {
       return result.data
