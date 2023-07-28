@@ -33,26 +33,72 @@ const tableHeaderWithEnding = [
   'Dar baixa'
 ]
 
+// export default function CustomerInformationDetail() {
+//   const [historyData, setHistoryData] = useState<GetHistoricalPredictionProps>(
+//     []
+//   )
+//   const [endingData, setEndingData] = useState<GetEndingPredictionProps>([])
+//   const [clientData, setClientData] = useState<GetClientProps>()
+//   const { id } = useParams()
+
+//   const fetchPredictionData = async () => {
+//     try {
+//       const historyResult = await GetHistoricalPrediction(id!)
+//       setHistoryData(historyResult)
+
+//       const endingResult = await GetEndingPrediction(id!)
+//       setEndingData(endingResult)
+
+//       const clientResult = await GetClient(id!)
+//       setClientData(clientResult)
+//     } catch (error) {
+//       alert((error as any).message)
+//     }
+//   }
+
+//   const decreaseProduct = async (productId: number) => {
+//     const result = await GetLowPrediction(id!, productId)
+//     if (result.baixa) {
+//       fetchPredictionData()
+//       alert('Produto baixado')
+//     }
+//   }
+
+//   const removeStock = async (productId: number) => {
+//     const result = await GetLowPrediction(id!, productId)
+//     if (result.baixa) {
+//       fetchPredictionData()
+//       alert('Produto baixado')
+//     }
+//   }
+
+//   useEffect(() => {
+//     fetchPredictionData()
+//   }, [id])
+
 export default function CustomerInformationDetail() {
-  const [historyData, setHistoryData] = useState<GetHistoricalPredictionProps>(
-    []
-  )
-  const [endingData, setEndingData] = useState<GetEndingPredictionProps>([])
-  const [clientData, setClientData] = useState<GetClientProps>()
+  const [historyData, setHistoryData] = useState<
+    GetHistoricalPredictionProps[]
+  >([])
+  const [endingData, setEndingData] = useState<GetEndingPredictionProps[]>([])
+  const [clientData, setClientData] = useState<GetClientProps | undefined>(
+    undefined
+  ) // Inicializa clientData como undefined
   const { id } = useParams()
 
   const fetchPredictionData = async () => {
     try {
       const historyResult = await GetHistoricalPrediction(id!)
       setHistoryData(historyResult)
-
+      console.log(historyResult)
       const endingResult = await GetEndingPrediction(id!)
       setEndingData(endingResult)
 
       const clientResult = await GetClient(id!)
       setClientData(clientResult)
     } catch (error) {
-      alert((error as any).message)
+      console.error(error.message) // Exibir o erro no console para depuração
+      alert('Ocorreu um erro ao buscar os dados do cliente.')
     }
   }
 
@@ -119,14 +165,14 @@ export default function CustomerInformationDetail() {
           }
         >
           {historyData.map(data => (
-            <tr key={data.id}>
-              <td className="column1">{data.id}</td>
-              <td className="column2">{data.nome}</td>
-              <td>{data.ultimaCompra}</td>
-              <td>{data.quantidade}</td>
+            <tr key={data.content.id}>
+              <td className="column1">{data.content.id}</td>
+              <td className="column2">{data.content.nome}</td>
+              <td>{data.content.ultimaCompra}</td>
+              <td>{data.content.quantidade}</td>
               <td className="arrow">
                 <StyledCheckIcon
-                  onClick={() => decreaseProduct(data.id)}
+                  onClick={() => decreaseProduct(data.content.id)}
                   type="button"
                 >
                   <img src={check} />

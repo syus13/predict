@@ -129,7 +129,7 @@ export default function DashboardPage() {
             <TableRow
               key={dashboardData.id}
               dashboardData={dashboardData}
-              url={`/informacoesprodutos${dashboardData.id}`}
+              url={`/informacoesprodutos/${dashboardData.id}`}
               navigate={goToPage}
             />
           ))}
