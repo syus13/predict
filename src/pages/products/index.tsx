@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { colors } from '../../themeColors'
 import { filterIcon } from '../../assets/icons'
@@ -92,7 +92,7 @@ export default function ProductPage() {
                 <tr
                   key={apiData.id}
                   className="onClick"
-                  onClick={() => goToPage(`/apiData/${apiData.id}`)}
+                  onClick={() => goToPage(`/informacoesprodutos/${apiData.id}`)}
                 >
                   <td className="column1">{apiData.id}</td>
                   <td className="column2">{apiData.nome}</td>

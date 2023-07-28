@@ -33,12 +33,57 @@ const tableHeaderWithEnding = [
   'Dar baixa'
 ]
 
+// export default function CustomerInformationDetail() {
+//   const [historyData, setHistoryData] = useState<GetHistoricalPredictionProps>(
+//     []
+//   )
+//   const [endingData, setEndingData] = useState<GetEndingPredictionProps>([])
+//   const [clientData, setClientData] = useState<GetClientProps>()
+//   const { id } = useParams()
+
+//   const fetchPredictionData = async () => {
+//     try {
+//       const historyResult = await GetHistoricalPrediction(id!)
+//       setHistoryData(historyResult)
+
+//       const endingResult = await GetEndingPrediction(id!)
+//       setEndingData(endingResult)
+
+//       const clientResult = await GetClient(id!)
+//       setClientData(clientResult)
+//     } catch (error) {
+//       alert((error as any).message)
+//     }
+//   }
+
+//   const decreaseProduct = async (productId: number) => {
+//     const result = await GetLowPrediction(id!, productId)
+//     if (result.baixa) {
+//       fetchPredictionData()
+//       alert('Produto baixado')
+//     }
+//   }
+
+//   const removeStock = async (productId: number) => {
+//     const result = await GetLowPrediction(id!, productId)
+//     if (result.baixa) {
+//       fetchPredictionData()
+//       alert('Produto baixado')
+//     }
+//   }
+
+//   useEffect(() => {
+//     fetchPredictionData()
+//   }, [id])
+
 export default function CustomerInformationDetail() {
   const [historyData, setHistoryData] = useState<GetHistoricalPredictionProps>(
     []
   )
   const [endingData, setEndingData] = useState<GetEndingPredictionProps>([])
-  const [clientData, setClientData] = useState<GetClientProps>()
+  const [clientData, setClientData] = useState<GetClientProps | undefined>(
+    undefined
+  ) // Inicializa clientData como undefined
   const { id } = useParams()
 
   const fetchPredictionData = async () => {
@@ -52,7 +97,8 @@ export default function CustomerInformationDetail() {
       const clientResult = await GetClient(id!)
       setClientData(clientResult)
     } catch (error) {
-      alert((error as any).message)
+      console.error(error.message) // Exibir o erro no console para depuração
+      alert('Ocorreu um erro ao buscar os dados do cliente.')
     }
   }
 

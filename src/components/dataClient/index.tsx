@@ -1,4 +1,3 @@
-import React from 'react'
 import { colors } from '../../themeColors'
 import { phoneIcon, mailIcon } from '../../assets/icons'
 import Title from '../titles'
