@@ -34,12 +34,12 @@ export default function Settings() {
       {settingsConfig.map((config, index) => (
         <React.Fragment key={index}>
           <TitleIcon
-            marginLeft="0px"
+            marginLeft="-10px"
             icon={config.icon}
             title={config.title}
             color={colors.gray600}
             background=""
-            fontSize="13px"
+            fontSize="14px"
             onClick={config.onClick}
           />
           {index !== settingsConfig.length - 1 && <hr />}

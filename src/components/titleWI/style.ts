@@ -6,6 +6,7 @@ export const StyledTitleIcon = styled.div<{
   fontSize: string
   marginLeft: string
 }>`
+  font-family: 'Poppins';
   display: flex;
   align-items: center;
   color: ${({ color }) => `${color}`};

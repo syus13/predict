@@ -62,7 +62,7 @@ export default function DashboardPage() {
 
   const navigate = useNavigate()
 
-  async function fetchData() {
+  async function fetchProductData() {
     try {
       const resultProducts: GetProductsProps[] = await GetProductsDashboard(
         dates.end,
@@ -89,7 +89,7 @@ export default function DashboardPage() {
   }
 
   useEffect(() => {
-    fetchData()
+    fetchProductData()
   }, [highProducts, dates])
 
   useEffect(() => {

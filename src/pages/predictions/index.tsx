@@ -38,8 +38,8 @@ export default function PagePredictions() {
       <StyledDashboardContainer>
         <Title
           marginLeft="10px"
-          text="Predictions"
-          size={24}
+          text="Predições"
+          size={32}
           color={colors.gray900}
           marginBottom="30px"
         />

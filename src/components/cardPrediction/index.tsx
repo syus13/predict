@@ -31,11 +31,11 @@ export default function CardPrediction({
         <CardWrapper>
           <TitleIcon
             marginLeft="10px"
-            fontSize="12px"
+            fontSize="16px"
             icon={<img src={userCard} />}
             title={name}
             color={colors.gray900}
-            background={colors.gray200}
+            background={colors.blue4}
             borderRadius="100px"
             marginBottom="20px"
           />

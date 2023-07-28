@@ -10,6 +10,8 @@ import DashboardPage from '@/pages/dashboard'
 import PagePredictions from '@/pages/predictions'
 import CustomerInformationDetail from '../pages/predictionDetail'
 import ProductInformationDetail from '../pages/productDetail/index'
+import ProductInformationClientDetail from '@/pages/productDetailClient'
+import ProductPage from '@/pages/products'
 
 type RoutesPrivateProps = {
   children: ReactNode
@@ -64,25 +66,25 @@ const router = createBrowserRouter([
         <ProductInformationDetail />
       </RoutesPrivate>
     )
+  },
+
+  {
+    path: '/informacoesprodutosclientes/:id',
+    element: (
+      <RoutesPrivate>
+        <ProductInformationClientDetail />
+      </RoutesPrivate>
+    )
+  },
+
+  {
+    path: '/produtos',
+    element: (
+      <RoutesPrivate>
+        <ProductPage />
+      </RoutesPrivate>
+    )
   }
-
-  // {
-  //   path: '/informacoesprodutosclientes/:id',
-  //   element: (
-  //     <RoutesPrivate>
-  //       < />
-  //     </RoutesPrivate>
-  //   )
-  // },
-
-  // {
-  //   path: '/produtos',
-  //   element: (
-  //     <RoutesPrivate>
-  //       < />
-  //     </RoutesPrivate>
-  //   )
-  //}
 ])
 
 export default function Router() {

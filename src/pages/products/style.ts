@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors } from '../../themeColors'
 
 export const StyledProductsContainer = styled.div`
-  margin-top: 110px;
+  margin-top: 80px;
 `
 
 export const ProductStatus = styled.div<{

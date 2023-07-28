@@ -40,22 +40,25 @@ export const Logged = styled.div`
 export const BgIcon = styled.div`
   background-color: ${colors.blue1};
   border-radius: 100%;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   padding: 7px 0px 0px 8px;
   margin-right: 10px;
 `
 export const StyledUser = styled.div`
   p {
-    font-size: 16px;
+    font-family: Sora;
+    font-size: 20px;
     font-weight: 600;
     color: ${colors.gray900};
-    margin-bottom: -5px;
   }
 
   span {
-    font-size: 12px;
+    font-family: Poppins;
+    font-size: 16px;
     font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.2px;
     color: ${colors.gray600};
   }
 `

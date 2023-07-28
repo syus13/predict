@@ -29,6 +29,10 @@ export default function Pagination({
   const length = Math.ceil(totalPagesListedInAPI / numberItemPage)
   const pageNumbers = Array.from({ length }, (_, soma) => soma + 1)
 
+  const startIndex = Math.max(0, currentPage - 1)
+  const endIndex = Math.min(startIndex + 4, pageNumbers.length)
+  const visiblePageNumbers = pageNumbers.slice(startIndex, endIndex)
+
   return (
     <StyledContainer>
       <div>
@@ -43,7 +47,7 @@ export default function Pagination({
           </ButtonIcon>
         )}
 
-        {pageNumbers.map(iten => (
+        {visiblePageNumbers.map(iten => (
           <StyledPagesButton
             className={iten === currentPage ? 'active' : ''}
             key={iten}

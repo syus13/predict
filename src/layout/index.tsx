@@ -12,12 +12,10 @@ export default function Layout({ children }: LayoutProps) {
     <Wrapper>
       <Menu />
       <StyledContainer width="1322.88px" marginLeft="190.08px">
-        <div>
-          <PageTop width="1225.92px" />
-          <StyledPage width="1225.92px" marginLeft="112.32px">
-            {children}
-          </StyledPage>
-        </div>
+        <PageTop width="1220px" />
+        <StyledPage width="1225.92px" marginLeft="112.32px">
+          {children}
+        </StyledPage>
       </StyledContainer>
     </Wrapper>
   )

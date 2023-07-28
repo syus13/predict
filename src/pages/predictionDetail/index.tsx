@@ -74,7 +74,7 @@ export default function CustomerInformationDetail() {
 
   useEffect(() => {
     fetchPredictionData()
-  }, [])
+  }, [id])
 
   return (
     <ContainerDetails>
@@ -120,8 +120,8 @@ export default function CustomerInformationDetail() {
         >
           {historyData.map(data => (
             <tr key={data.id}>
-              <td className="coluna1">{data.id}</td>
-              <td className="coluna2">{data.nome}</td>
+              <td className="column1">{data.id}</td>
+              <td className="column2">{data.nome}</td>
               <td>{data.ultimaCompra}</td>
               <td>{data.quantidade}</td>
               <td className="arrow">

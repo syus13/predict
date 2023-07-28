@@ -54,8 +54,8 @@ export default function ProductPage() {
       <StyledProductsContainer>
         <Title
           marginLeft="28px"
-          text="Products"
-          size={24}
+          text="Produtos"
+          size={32}
           color={colors.gray900}
         />
         <StyledProductsContainer>

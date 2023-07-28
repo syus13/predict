@@ -19,8 +19,8 @@ export const StyledCalendarDash = styled.div`
     cursor: pointer;
   }
 
-  > option {
-    font-size: 13px;
+  > select option {
+    font-size: 14px;
     font-weight: 400;
   }
 `

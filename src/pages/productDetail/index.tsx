@@ -21,7 +21,7 @@ const TitleTable = ['ID', 'Cliente', 'Percentual', 'Quantidade']
 
 export default function ProductInformationDetail() {
   const [clientLow, setClientLow] = useState<GetProductClientProps>([])
-  const [clientesOnHigh, setClientesOnHigh] = useState<GetProductClientProps>(
+  const [clientesInHigh, setClientesInHigh] = useState<GetProductClientProps>(
     []
   )
 
@@ -32,10 +32,10 @@ export default function ProductInformationDetail() {
   useEffect(() => {
     ;(async () => {
       try {
-        const resultEmBaixa = await GetProductClient(id!, 'EM_BAIXA')
-        const resultEmAlta = await GetProductClient(id!, 'EM_ALTA')
-        setClientLow(resultEmBaixa)
-        setClientesOnHigh(resultEmAlta)
+        const resultLow = await GetProductClient(id!, 'EM_BAIXA')
+        const resultInHigh = await GetProductClient(id!, 'EM_ALTA')
+        setClientLow(resultLow)
+        setClientesInHigh(resultInHigh)
       } catch (error) {
         alert((error as any).message)
       }
@@ -136,7 +136,7 @@ export default function ProductInformationDetail() {
           width="49%"
           headers={TitleTable}
         >
-          {clientesOnHigh.map(apiData => (
+          {clientesInHigh.map(apiData => (
             <tr key={apiData.id}>
               <td className="column1">{apiData.id}</td>
               <td className="column2">{apiData.nome}</td>
