@@ -1,11 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import logoutIcon from '../../assets/icons/logout.svg'
-import settingTwoIcon from '../../assets/icons/settingTWO.svg'
 import api from '../../apiRequest/configApi'
 import { colors } from '../../themeColors'
 import { StyledSettings } from './style'
 import TitleIcon from '../titleWI'
+import { settingTwo } from '@/assets/icons'
 
 export default function Settings() {
   const navigate = useNavigate()
@@ -18,7 +18,7 @@ export default function Settings() {
 
   const settingsConfig = [
     {
-      icon: <img src={settingTwoIcon} alt="Configurações" />,
+      icon: <img src={settingTwo} alt="Configurações" />,
       title: 'Configurações',
       onClick: () => {}
     },
