@@ -77,10 +77,10 @@ const tableHeaderWithEnding = [
 //   }, [id])
 
 export default function CustomerInformationDetail() {
-  const [historyData, setHistoryData] = useState<
-    GetHistoricalPredictionProps[]
-  >([])
-  const [endingData, setEndingData] = useState<GetEndingPredictionProps[]>([])
+  const [historyData, setHistoryData] = useState<GetHistoricalPredictionProps>(
+    []
+  )
+  const [endingData, setEndingData] = useState<GetEndingPredictionProps>([])
   const [clientData, setClientData] = useState<GetClientProps | undefined>(
     undefined
   ) // Inicializa clientData como undefined
@@ -90,7 +90,7 @@ export default function CustomerInformationDetail() {
     try {
       const historyResult = await GetHistoricalPrediction(id!)
       setHistoryData(historyResult)
-      console.log(historyResult)
+
       const endingResult = await GetEndingPrediction(id!)
       setEndingData(endingResult)
 
@@ -125,11 +125,7 @@ export default function CustomerInformationDetail() {
   return (
     <ContainerDetails>
       <StyledContainerTable>
-        <StyledLinkMenu
-          marginLeft="0px"
-          color={colors.gray900}
-          to="/predictions"
-        >
+        <StyledLinkMenu marginLeft="0px" color={colors.gray900} to="/predicoes">
           <TitleIcon
             marginLeft="10px"
             fontSize="16px"
@@ -164,22 +160,23 @@ export default function CustomerInformationDetail() {
             />
           }
         >
-          {historyData.map(data => (
-            <tr key={data.content.id}>
-              <td className="column1">{data.content.id}</td>
-              <td className="column2">{data.content.nome}</td>
-              <td>{data.content.ultimaCompra}</td>
-              <td>{data.content.quantidade}</td>
-              <td className="arrow">
-                <StyledCheckIcon
-                  onClick={() => decreaseProduct(data.content.id)}
-                  type="button"
-                >
-                  <img src={check} />
-                </StyledCheckIcon>
-              </td>
-            </tr>
-          ))}
+          {Array.isArray(historyData) &&
+            historyData.map(data => (
+              <tr key={data.id}>
+                <td className="column1">{data.id}</td>
+                <td className="column2">{data.nome}</td>
+                <td>{data.ultimaCompra}</td>
+                <td>{data.quantidade}</td>
+                <td className="arrow">
+                  <StyledCheckIcon
+                    onClick={() => decreaseProduct(data.id)}
+                    type="button"
+                  >
+                    <img src={check} />
+                  </StyledCheckIcon>
+                </td>
+              </tr>
+            ))}
         </ProductsTable>
         <ProductsTable
           button=""
@@ -196,23 +193,24 @@ export default function CustomerInformationDetail() {
             />
           }
         >
-          {endingData.map(data => (
-            <tr key={data.id}>
-              <td className="column1">{data.id}</td>
-              <td className="column2">{data.nome}</td>
-              <td className="column3">{data.ultimaCompra}</td>
-              <td>{data.proximaCompra}</td>
-              <td>{data.quantidade}</td>
-              <td className="arrow">
-                <StyledCheckIcon
-                  onClick={() => removeStock(data.id)}
-                  type="button"
-                >
-                  <img src={check} />
-                </StyledCheckIcon>
-              </td>
-            </tr>
-          ))}
+          {Array.isArray(endingData) &&
+            endingData.map(data => (
+              <tr key={data.id}>
+                <td className="column1">{data.id}</td>
+                <td className="column2">{data.nome}</td>
+                <td className="column3">{data.ultimaCompra}</td>
+                <td>{data.proximaCompra}</td>
+                <td>{data.quantidade}</td>
+                <td className="arrow">
+                  <StyledCheckIcon
+                    onClick={() => removeStock(data.id)}
+                    type="button"
+                  >
+                    <img src={check} />
+                  </StyledCheckIcon>
+                </td>
+              </tr>
+            ))}
         </ProductsTable>
       </StyledContainerTable>
     </ContainerDetails>
