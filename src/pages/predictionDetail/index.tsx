@@ -97,7 +97,7 @@ export default function CustomerInformationDetail() {
       const clientResult = await GetClient(id!)
       setClientData(clientResult)
     } catch (error) {
-      console.error(error.message) // Exibir o erro no console para depuração
+      console.error(error)
       alert('Ocorreu um erro ao buscar os dados do cliente.')
     }
   }
