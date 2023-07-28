@@ -31,6 +31,7 @@ export default function HightLowButton({ inHigh, changeStatus }: BtnProps) {
         backgroundColor={highButtonBackground}
         type="submit"
         onClick={handleHighButtonClick}
+        textColor="white"
       >
         Em alta
       </StyledButton>
@@ -39,6 +40,7 @@ export default function HightLowButton({ inHigh, changeStatus }: BtnProps) {
         backgroundColor={lowButtonBackground}
         type="submit"
         onClick={handleLowButtonClick}
+        textColor="white"
       >
         Em baixa
       </StyledButton>
