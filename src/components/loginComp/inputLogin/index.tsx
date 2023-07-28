@@ -30,7 +30,7 @@ export default function Input({ eyes }: InputProps) {
   const login = async () => {
     const result = await AuthenticateUser(email, password, setAuth)
     if (result.login) {
-      window.location.href = '/predicoes'
+      window.location.href = '/dashboard'
       return
     }
     alert(result.message)
