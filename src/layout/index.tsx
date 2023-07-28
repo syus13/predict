@@ -12,7 +12,7 @@ export default function Layout({ children }: LayoutProps) {
     <Wrapper>
       <Menu />
       <StyledContainer width="1322.88px" marginLeft="190.08px">
-        <PageTop width="1220px" />
+        <PageTop width="2000px" />
         <StyledPage width="1225.92px" marginLeft="112.32px">
           {children}
         </StyledPage>

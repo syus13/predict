@@ -8,6 +8,7 @@ export const StyledMenu = styled.div`
   height: 100vh;
   position: fixed;
   top: 0;
+  z-index: 10;
 `
 
 export const StyledLogo = styled.div`
