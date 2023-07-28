@@ -19,7 +19,7 @@ import research from './research.svg'
 import settingTwo from './settingTwo.svg'
 import trendingDown from './trendingDown.svg'
 import trendingUp from './trendingUp.svg'
-import user from './user.svg'
+import user from './userImg.svg'
 import userCard from './userCard.svg'
 
 export {
