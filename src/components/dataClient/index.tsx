@@ -13,7 +13,14 @@ type DataClientProps = {
 function DataClient({ name, phone, email }: DataClientProps) {
   return (
     <ContainerDataClient>
-      <Title marginLeft="" text={name} size={22} color={colors.white} />
+      <Title
+        fFamily="Sora"
+        fWeight={600}
+        marginLeft=""
+        text={name}
+        size={32}
+        color={colors.white}
+      />
       <ContactClient
         phoneIcon={<img src={phoneIcon} />}
         phone={phone}

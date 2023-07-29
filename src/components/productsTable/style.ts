@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { colors } from '../../themeColors'
 
 export const StyledProductsTable = styled.table`
+  font-family: Poppins;
   width: 100%;
   border-spacing: 0;
   border-radius: 20px 20px 0 0;
@@ -9,9 +10,11 @@ export const StyledProductsTable = styled.table`
   margin-top: 32px;
 
   thead {
-    font-size: 12px;
+    font-size: 16px;
     color: ${colors.blue4};
-    font-weight: 400;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.2px;
     text-align: center;
     background-color: ${colors.blue1};
 
@@ -32,10 +35,12 @@ export const StyledProductsTable = styled.table`
   }
 
   tbody {
-    font-size: 12px;
+    font-size: 16px;
     color: ${colors.gray900};
     background-color: ${colors.gray50};
     font-weight: 400;
+    line-height: 150%; /* 24px */
+    letter-spacing: 0.2px;
     text-align: center;
 
     .arrow {

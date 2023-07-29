@@ -92,7 +92,7 @@ export default function ProductPage() {
                 <tr
                   key={apiData.id}
                   className="onClick"
-                  onClick={() => goToPage(`/informacoesprodutos/${apiData.id}`)}
+                  onClick={() => goToPage(`/informationproducts/${apiData.id}`)}
                 >
                   <td className="column1">{apiData.id}</td>
                   <td className="column2">{apiData.nome}</td>

@@ -18,7 +18,12 @@ import TitleIcon from '../../components/titleWI'
 import { StyledLinkMenu } from '../../components/menuItens/style'
 import { StyledCheckIcon } from '../../components/cardPrediction/style'
 import { StyledContainerTable } from '../dashboard/style'
-import { arrowLeft, check, facialCleanser, history } from '../../assets/icons'
+import {
+  arrowLeft,
+  check,
+  facialCleanserRed,
+  history
+} from '../../assets/icons'
 import DataClient from '../../components/dataClient'
 import { ContainerDetails } from './style'
 import ProductsTable from '../../components/productsTable'
@@ -33,49 +38,6 @@ const tableHeaderWithEnding = [
   'Dar baixa'
 ]
 
-// export default function CustomerInformationDetail() {
-//   const [historyData, setHistoryData] = useState<GetHistoricalPredictionProps>(
-//     []
-//   )
-//   const [endingData, setEndingData] = useState<GetEndingPredictionProps>([])
-//   const [clientData, setClientData] = useState<GetClientProps>()
-//   const { id } = useParams()
-
-//   const fetchPredictionData = async () => {
-//     try {
-//       const historyResult = await GetHistoricalPrediction(id!)
-//       setHistoryData(historyResult)
-
-//       const endingResult = await GetEndingPrediction(id!)
-//       setEndingData(endingResult)
-
-//       const clientResult = await GetClient(id!)
-//       setClientData(clientResult)
-//     } catch (error) {
-//       alert((error as any).message)
-//     }
-//   }
-
-//   const decreaseProduct = async (productId: number) => {
-//     const result = await GetLowPrediction(id!, productId)
-//     if (result.baixa) {
-//       fetchPredictionData()
-//       alert('Produto baixado')
-//     }
-//   }
-
-//   const removeStock = async (productId: number) => {
-//     const result = await GetLowPrediction(id!, productId)
-//     if (result.baixa) {
-//       fetchPredictionData()
-//       alert('Produto baixado')
-//     }
-//   }
-
-//   useEffect(() => {
-//     fetchPredictionData()
-//   }, [id])
-
 export default function CustomerInformationDetail() {
   const [historyData, setHistoryData] = useState<GetHistoricalPredictionProps>(
     []
@@ -83,7 +45,7 @@ export default function CustomerInformationDetail() {
   const [endingData, setEndingData] = useState<GetEndingPredictionProps>([])
   const [clientData, setClientData] = useState<GetClientProps | undefined>(
     undefined
-  ) // Inicializa clientData como undefined
+  )
   const { id } = useParams()
 
   const fetchPredictionData = async () => {
@@ -125,12 +87,12 @@ export default function CustomerInformationDetail() {
   return (
     <ContainerDetails>
       <StyledContainerTable>
-        <StyledLinkMenu marginLeft="0px" color={colors.gray900} to="/predicoes">
+        <StyledLinkMenu marginLeft="0px" color={colors.gray900} to="/predict">
           <TitleIcon
             marginLeft="10px"
-            fontSize="16px"
+            fontSize="20px"
             icon={<img src={arrowLeft} />}
-            title="Predições"
+            title="Predição"
             color={colors.gray900}
             background={colors.gray200}
             borderRadius="100px"
@@ -147,12 +109,12 @@ export default function CustomerInformationDetail() {
       <StyledContainerTable>
         <ProductsTable
           button=""
-          width="45%"
+          width="60%"
           headers={tableHeader}
           title={
             <TitleIcon
               marginLeft="10px"
-              fontSize="16px"
+              fontSize="20px"
               background={colors.gray200}
               color={colors.gray900}
               icon={<img src={history} />}
@@ -180,15 +142,15 @@ export default function CustomerInformationDetail() {
         </ProductsTable>
         <ProductsTable
           button=""
-          width="53%"
+          width="70%"
           headers={tableHeaderWithEnding}
           title={
             <TitleIcon
               marginLeft="10px"
-              fontSize="16px"
+              fontSize="20px"
               background={colors.lightRed}
               color={colors.error}
-              icon={<img src={facialCleanser} color={colors.error} />}
+              icon={<img src={facialCleanserRed} back-groud={colors.black} />}
               title="Produtos esgotando"
             />
           }

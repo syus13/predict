@@ -36,12 +36,15 @@ type ButtonProps = {
 }
 
 export const StyledButton = styled.button<ButtonProps>`
+  font-family: 'Poppins';
   width: 90px;
   height: 24px;
   border-radius: 5px;
   border: none;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
+  line-height: 140%; /* 19.6px */
+  letter-spacing: 0.2px;
   cursor: pointer;
   color: ${props => props.textColor};
   background-color: ${props => props.backgroundColor};

@@ -9,7 +9,7 @@ import GetListPrediction, {
   GetListPredictionProps
 } from '../../apiRequest/getPrediction/List'
 
-const TABLE_HEADER = ['Produto', 'Próxima compra']
+const TABLE_HEADER = ['Produto', 'Próx. compra']
 
 export default function PagePredictions() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -37,6 +37,8 @@ export default function PagePredictions() {
     <div>
       <StyledDashboardContainer>
         <Title
+          fFamily="Sora"
+          fWeight={600}
           marginLeft="10px"
           text="Predições"
           size={32}

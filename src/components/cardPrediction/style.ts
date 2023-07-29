@@ -4,7 +4,7 @@ export const CardWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 `
 
 export const ChevronIcon = styled.div`
@@ -12,11 +12,12 @@ export const ChevronIcon = styled.div`
 `
 
 export const ClientCardContainer = styled.div`
-  width: 248px;
+  width: 360px;
   height: auto;
   padding: 16px;
   border-radius: 20px;
   box-shadow: 0px 7px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
 `
 export const StyledCheckIcon = styled.button`
   background-color: transparent;

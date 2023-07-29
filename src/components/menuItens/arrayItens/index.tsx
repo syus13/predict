@@ -1,26 +1,26 @@
-import ToDash from '../../../assets/icons/pieTwo.svg'
-import ToPredict from '../../../assets/icons/chartLine.svg'
-import ToProduct from '../../../assets/icons/facialCleanser.svg'
 import { colors } from '../../../themeColors'
+import { chartLine, facialCleanserWhite, pieTwo } from '@/assets/icons'
 
 const items = [
   {
     id: 1,
-    icon: <img src={ToDash} alt="" />,
+    icon: <img src={pieTwo} alt="" />,
     text: 'Dashboard',
     url: '/dashboard'
   },
   {
     id: 2,
-    icon: <img src={ToPredict} alt="" />,
+    icon: <img src={chartLine} alt="" />,
     text: 'Predições',
-    url: '/predicoes'
+    url: '/predict'
   },
   {
     id: 3,
-    icon: <img src={ToProduct} alt="" style={{ color: colors.black }} />,
+    icon: (
+      <img src={facialCleanserWhite} alt="" style={{ color: colors.black }} />
+    ),
     text: 'Produtos',
-    url: '/produtos'
+    url: '/products'
   }
 ]
 

@@ -64,7 +64,7 @@ export default function ProductInformationClientDetail() {
           <StyledLinkMenu
             marginLeft="0px"
             color={colors.gray900}
-            to="/produtos"
+            to="/products"
           >
             <TitleIcon
               fontSize="16px"
