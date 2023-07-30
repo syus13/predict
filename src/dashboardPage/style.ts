@@ -16,7 +16,7 @@ export const StyledDashboardCard = styled.div<{
   background: ${({ backgroundColor }) => `${backgroundColor}`};
   width: ${({ width }) => `${width}`};
   border-radius: 18px;
-  height: 90px;
+  height: 70px;
   padding: 18px 8px 8px 8px;
   padding-bottom: ${({ paddingBottom }) => `${paddingBottom}`};
   box-shadow: ${({ boxShadow }) => `${boxShadow}`};
@@ -26,7 +26,7 @@ export const StyledDashboard = styled.div`
   background: ${colors.blue1};
   border-radius: 24px;
   padding: 30px;
-  width: 100%;
+  width: 1050px;
 
   h1 {
     color: ${colors.white};
@@ -57,13 +57,9 @@ export const StyledTitle = styled.div`
   > span {
     font-family: 'Sora';
     color: ${colors.white};
-    font-size: 32px;
+    font-size: 26px;
     font-style: normal;
     font-weight: 600;
-    line-height: 150%;
+    //line-height: 150%;
   }
-`
-
-export const RadialBarStyles = styled.div`
-  padding-bottom: 50px;
 `

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { user, chevronDown } from '../../assets/icons'
-import Title from '../titles'
 import UserLogged, { UserLoggedProps } from '../../apiRequest/userLogged'
 import { BgIcon, Logged, StyledTop, StyledUser } from './style'
 import Settings from '../settings'
@@ -25,14 +24,12 @@ function User({ name, email }: UserProps) {
 export default function PageTop({ width }: TopProps) {
   const [openConfig, setOpenConfig] = useState(false)
   const [logged, setLogged] = useState<UserLoggedProps | undefined>()
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const result = await UserLogged()
         setLogged(result)
-        setLoading(false)
       } catch (error) {
         alert((error as any).message)
       }
@@ -40,10 +37,6 @@ export default function PageTop({ width }: TopProps) {
 
     fetchData()
   }, [])
-
-  if (loading) {
-    return <Title text="" size={0} color="" marginLeft="" />
-  }
 
   const handleOpen = () => {
     setOpenConfig(!openConfig)

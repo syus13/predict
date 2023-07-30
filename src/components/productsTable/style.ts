@@ -10,10 +10,9 @@ export const StyledProductsTable = styled.table`
   margin-top: 32px;
 
   thead {
-    font-size: 16px;
+    font-size: 12px;
     color: ${colors.blue4};
     font-weight: 600;
-    line-height: 150%;
     letter-spacing: 0.2px;
     text-align: center;
     background-color: ${colors.blue1};
@@ -35,7 +34,7 @@ export const StyledProductsTable = styled.table`
   }
 
   tbody {
-    font-size: 16px;
+    font-size: 12px;
     color: ${colors.gray900};
     background-color: ${colors.gray50};
     font-weight: 400;
