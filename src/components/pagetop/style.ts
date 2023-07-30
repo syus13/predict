@@ -6,7 +6,7 @@ export const StyledTop = styled.div<{ width: string }>`
   padding: 0 22px;
   right: 0;
   width: ${({ width }) => `${width}`};
-  height: 90px;
+  height: 40px;
   display: flex;
   justify-content: right;
   align-items: center;
@@ -32,6 +32,7 @@ export const StyledTop = styled.div<{ width: string }>`
   }
 `
 export const Logged = styled.div`
+  margin-top: 40px;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -48,14 +49,14 @@ export const BgIcon = styled.div`
 export const StyledUser = styled.div`
   p {
     font-family: Sora;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     color: ${colors.gray900};
   }
 
   span {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 150%;
     letter-spacing: 0.2px;

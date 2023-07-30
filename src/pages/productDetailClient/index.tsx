@@ -32,6 +32,8 @@ export default function ProductInformationClientDetail() {
       try {
         const resultLow = await GetProductStatus(id!, 'EM_BAIXA')
         const resultInHigh = await GetProductStatus(id!, 'EM_ALTA')
+        console.log(resultLow, resultInHigh, 'teste de log')
+
         setProductLow(resultLow)
         setProductInHigh(resultInHigh)
       } catch (error) {

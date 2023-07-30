@@ -39,20 +39,22 @@ const tableHeaderWithEnding = [
 ]
 
 export default function CustomerInformationDetail() {
+  const { id } = useParams()
   const [historyData, setHistoryData] = useState<GetHistoricalPredictionProps>(
-    []
+    {} as GetHistoricalPredictionProps
   )
-  const [endingData, setEndingData] = useState<GetEndingPredictionProps>([])
+  const [endingData, setEndingData] = useState<GetEndingPredictionProps>(
+    {} as GetEndingPredictionProps
+  )
   const [clientData, setClientData] = useState<GetClientProps | undefined>(
     undefined
   )
-  const { id } = useParams()
 
   const fetchPredictionData = async () => {
     try {
       const historyResult = await GetHistoricalPrediction(id!)
       setHistoryData(historyResult)
-
+      console.log(historyData)
       const endingResult = await GetEndingPrediction(id!)
       setEndingData(endingResult)
 
@@ -122,16 +124,16 @@ export default function CustomerInformationDetail() {
             />
           }
         >
-          {Array.isArray(historyData) &&
-            historyData.map(data => (
-              <tr key={data.id}>
-                <td className="column1">{data.id}</td>
-                <td className="column2">{data.nome}</td>
-                <td>{data.ultimaCompra}</td>
-                <td>{data.quantidade}</td>
+          {Array.isArray(historyData.content) &&
+            historyData.content.map(apiHistory => (
+              <tr key={apiHistory.id}>
+                <td className="column1">{apiHistory.id}</td>
+                <td className="column2">{apiHistory.nome}</td>
+                <td>{apiHistory.ultimaCompra}</td>
+                <td>{apiHistory.quantidade}</td>
                 <td className="arrow">
                   <StyledCheckIcon
-                    onClick={() => decreaseProduct(data.id)}
+                    onClick={() => decreaseProduct(apiHistory.id)}
                     type="button"
                   >
                     <img src={check} />
@@ -155,8 +157,8 @@ export default function CustomerInformationDetail() {
             />
           }
         >
-          {Array.isArray(endingData) &&
-            endingData.map(data => (
+          {Array.isArray(endingData.content) &&
+            endingData.content.map(data => (
               <tr key={data.id}>
                 <td className="column1">{data.id}</td>
                 <td className="column2">{data.nome}</td>

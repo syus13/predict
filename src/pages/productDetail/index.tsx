@@ -23,6 +23,8 @@ export default function ProductInformationDetail() {
   const [clientLow, setClientLow] = useState<GetProductClientProps>([])
   const [clientesInHigh, setClientInHigh] = useState<GetProductClientProps>([])
 
+  console.log(clientLow, 'Teste array')
+
   const [summary, setSummary] = useState<GetProductSummaryProps>()
 
   const { id } = useParams()
@@ -32,6 +34,8 @@ export default function ProductInformationDetail() {
       try {
         const resultLow = await GetProductClient(id!, 'EM_BAIXA')
         const resultInHigh = await GetProductClient(id!, 'EM_ALTA')
+        console.log(resultLow, resultInHigh, 'teste de log clientes')
+
         setClientLow(resultLow)
         setClientInHigh(resultInHigh)
       } catch (error) {

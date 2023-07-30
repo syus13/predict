@@ -2,10 +2,10 @@ import { isAxiosError } from 'axios'
 import api from '../../configApi'
 
 export type GetProductClientProps = {
-  quantidade: number
   id: number
   nome: string
   percentual: number
+  quantidade: number
 }[]
 
 export default async function GetProductClient(
