@@ -8,7 +8,6 @@ import ResearchPrediction from '@/components/researchPrediction'
 import GetListPrediction, {
   GetListPredictionProps
 } from '../../apiRequest/getPrediction/List'
-import Pagination from '@/components/pagination'
 
 const TABLE_HEADER = ['Produto', 'Próx. compra']
 
@@ -45,7 +44,7 @@ export default function PagePredictions() {
           size={32}
           color={colors.gray900}
           marginBottom="30px"
-          marginTop="110px"
+          marginTop="40ps"
         />
         <ResearchPrediction
           startSearch={startSearch}

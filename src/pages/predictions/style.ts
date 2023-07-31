@@ -5,6 +5,6 @@ export const ContainerCard = styled.div`
   flex-wrap: wrap;
   width: 100%;
   padding: 26px 0px 26px 26px;
-  height: 45vh;
+  height: 50vh;
   overflow: auto;
 `
