@@ -16,7 +16,7 @@ export const StyledContactUs = styled.div`
   font-weight: 200;
   padding: 0 20px 16px 14px;
   text-align: center;
-  margin: 210px auto 0;
+  margin: 100px auto 0;
 
   img {
     margin: -70px auto 5px;

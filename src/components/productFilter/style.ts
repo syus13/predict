@@ -12,10 +12,13 @@ export const FullContainer = styled.div`
 export const ContainerProduct = styled.div`
   position: fixed;
   background-color: ${colors.white};
-  width: 200px;
+  font-family: 'Poppins';
+  width: 335px;
+  height: 311px;
+
   top: 0;
-  margin-top: 100px;
-  margin-left: 490px;
+  margin-top: 280px;
+  margin-left: 430px;
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0px 7px 30px rgba(0, 0, 0, 0.2);
@@ -30,6 +33,7 @@ export const ContainerProduct = styled.div`
 export const StyledProduct = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
 `
 
 export const StyledSubTitle = styled.div`

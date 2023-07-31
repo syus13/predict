@@ -8,12 +8,12 @@ export const StyledCalendarDash = styled.div`
   align-items: center;
   background: ${colors.white};
   border-radius: 8px;
-  width: 224px;
+  width: 200px;
   padding: 8px;
 
   > select {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     color: ${colors.blue1};
     border: none;
     cursor: pointer;
@@ -26,7 +26,7 @@ export const StyledCalendarDash = styled.div`
 `
 export const Text = styled.div`
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   color: ${colors.gray800};
   margin: 0 3px;
   line-height: 150%;

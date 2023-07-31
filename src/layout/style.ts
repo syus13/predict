@@ -15,7 +15,7 @@ export const StyledContainer = styled.div<{
 `
 
 export const StyledPage = styled.div<{ marginLeft: string; width: string }>`
-  margin-top: 90px;
+  margin-top: 0px;
   margin-left: ${({ marginLeft }) => `${marginLeft}`};
   width: ${({ width }) => `${width}`};
 `

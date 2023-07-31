@@ -53,10 +53,14 @@ export default function ProductPage() {
     <div>
       <StyledProductsContainer>
         <Title
+          fFamily="Sora"
+          fWeight={600}
           marginLeft="28px"
           text="Produtos"
           size={32}
           color={colors.gray900}
+          marginTop="130px"
+          marginBottom="-80px"
         />
         <StyledProductsContainer>
           <ProductsTable
@@ -92,7 +96,7 @@ export default function ProductPage() {
                 <tr
                   key={apiData.id}
                   className="onClick"
-                  onClick={() => goToPage(`/informacoesprodutos/${apiData.id}`)}
+                  onClick={() => goToPage(`/informationproducts/${apiData.id}`)}
                 >
                   <td className="column1">{apiData.id}</td>
                   <td className="column2">{apiData.nome}</td>

@@ -42,7 +42,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/predicoes',
+    path: '/predict',
     element: (
       <RoutesPrivate>
         <PagePredictions />
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/informacoesclientes/:id',
+    path: '/customerinformation/:id',
     element: (
       <RoutesPrivate>
         <CustomerInformationDetail />
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/informacoesprodutos/:id',
+    path: '/informationproducts/:id',
     element: (
       <RoutesPrivate>
         <ProductInformationDetail />
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/informacoesprodutosclientes/:id',
+    path: '/informationproductscustomers/:id',
     element: (
       <RoutesPrivate>
         <ProductInformationClientDetail />
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/produtos',
+    path: '/products',
     element: (
       <RoutesPrivate>
         <ProductPage />

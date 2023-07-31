@@ -23,138 +23,19 @@ export default function ProductInformationDetail() {
   const [clientLow, setClientLow] = useState<GetProductClientProps>([])
   const [clientesInHigh, setClientInHigh] = useState<GetProductClientProps>([])
 
+  console.log(clientLow, 'Teste array')
+
   const [summary, setSummary] = useState<GetProductSummaryProps>()
 
   const { id } = useParams()
-
-  //   useEffect(() => {
-  //     ;(async () => {
-  //       try {
-  //         const resultLow = await GetProductClient(id!, 'EM_BAIXA')
-  //         const resultInHigh = await GetProductClient(id!, 'EM_ALTA')
-  //         setClientLow(resultLow)
-  //         setClientesInHigh(resultInHigh)
-  //       } catch (error) {
-  //         alert((error as any).message)
-  //       }
-  //     })()
-  //   }, [id])
-
-  //   useEffect(() => {
-  //     ;(async () => {
-  //       try {
-  //         const resultResumo = await GetProductSummary(id!)
-  //         setSummary(resultResumo)
-  //       } catch (error) {
-  //         alert((error as any).message)
-  //       }
-  //     })()
-  //   }, [id])
-
-  //   return (
-  //     <div>
-  //       <ContainerDetails>
-  //         <StyledContainerTable>
-  //           <StyledLinkMenu to="/produtos" color={colors.gray900}>
-  //             <TitleIcon
-  //               fontSize="16px"
-  //               icon={arrowLeft}
-  //               title="Detalhamento"
-  //               color={colors.gray900}
-  //               background={colors.gray200}
-  //               borderRadius="100px"
-  //               marginLeft="10px"
-  //             />
-  //           </StyledLinkMenu>
-  //         </StyledContainerTable>
-  //         <StyledContainerTable>
-  //           <Title
-  //             text={summary?.nome || ''}
-  //             size={24}
-  //             color={colors.blue1}
-  //             marginLeft=""
-  //             marginBottom="20px"
-  //           />
-  //         </StyledContainerTable>
-  //         <StyledContainerTable>
-  //           <DashboardCard
-  //             boxShadow="0px 7px 30px rgba(0, 0, 0, 0.1)"
-  //             titleColor={colors.white}
-  //             textColor={colors.white}
-  //             description="Média 120 dias"
-  //             status=""
-  //             type=""
-  //             value={summary?.media120Dias || 0}
-  //             backgroundColor=""
-  //             cardBackground={colors.blue1}
-  //             width="210px"
-  //             paddingBottom="40px"
-  //           />
-  //         </StyledContainerTable>
-  //       </ContainerDetails>
-  //       <StyledContainerTable>
-  //         <ProductsTable
-  //           title={
-  //             <TitleIcon
-  //               marginLeft="10px"
-  //               fontSize="16px"
-  //               background={colors.error}
-  //               color={colors.gray900}
-  //               icon={trendingDown}
-  //               title="Cliente em baixa"
-  //             />
-  //           }
-  //           button=""
-  //           width="49%"
-  //           headers={TitleTable}
-  //         >
-  //           {clientLow.map(apiData => (
-  //             <tr key={apiData.id}>
-  //               <td className="column1">{apiData.id}</td>
-  //               <td className="column2">{apiData.nome}</td>
-  //               <td className="column3">
-  //                 {String(apiData.percentual).replace('.', ',')}%
-  //               </td>
-  //               <td>{apiData.quantidade}</td>
-  //             </tr>
-  //           ))}
-  //         </ProductsTable>
-  //         <ProductsTable
-  //           title={
-  //             <TitleIcon
-  //               marginLeft="10px"
-  //               fontSize="16px"
-  //               background={colors.success}
-  //               color={colors.gray900}
-  //               icon={trendingUp}
-  //               title="Clientes em alta"
-  //             />
-  //           }
-  //           button=""
-  //           width="49%"
-  //           headers={TitleTable}
-  //         >
-  //           {clientesInHigh.map(apiData => (
-  //             <tr key={apiData.id}>
-  //               <td className="column1">{apiData.id}</td>
-  //               <td className="column2">{apiData.nome}</td>
-  //               <td className="column3">
-  //                 {String(apiData.percentual).replace('.', ',')}%
-  //               </td>
-  //               <td>{apiData.quantidade}</td>
-  //             </tr>
-  //           ))}
-  //         </ProductsTable>
-  //       </StyledContainerTable>
-  //     </div>
-  //   )
-  // }
 
   useEffect(() => {
     async function fetchData() {
       try {
         const resultLow = await GetProductClient(id!, 'EM_BAIXA')
         const resultInHigh = await GetProductClient(id!, 'EM_ALTA')
+        //console.log(resultLow, resultInHigh, 'teste de log clientes')
+
         setClientLow(resultLow)
         setClientInHigh(resultInHigh)
       } catch (error) {
@@ -187,7 +68,7 @@ export default function ProductInformationDetail() {
           <StyledLinkMenu
             marginLeft="0px"
             color={colors.gray900}
-            to="/produtos"
+            to="/dashboard"
           >
             <TitleIcon
               fontSize="16px"
@@ -202,6 +83,8 @@ export default function ProductInformationDetail() {
         </StyledContainerTable>
         <StyledContainerTable>
           <Title
+            fFamily="Sora"
+            fWeight={700}
             text={summary.nome || ''}
             size={24}
             color={colors.blue1}
@@ -220,7 +103,60 @@ export default function ProductInformationDetail() {
             value={summary.media120Dias || 0}
             backgroundColor=""
             cardBackground={colors.blue1}
-            width="210px"
+            width="200px"
+            paddingBottom="40px"
+          />
+          <DashboardCard
+            boxShadow="0px 7px 30px rgba(0, 0, 0, 0.1)"
+            titleColor={colors.gray900}
+            textColor={colors.blue1}
+            description="Ultimos 30 dias"
+            status=""
+            type=""
+            value={summary.ultimos30Dias || 0}
+            percentage={summary?.percentualUltimos30Dias || 0}
+            backgroundColor={colors.success}
+            cardBackground={colors.white}
+            width="200px"
+            paddingBottom="40px"
+          />
+          <DashboardCard
+            boxShadow="0px 7px 30px rgba(0, 0, 0, 0.1)"
+            titleColor={colors.gray900}
+            textColor={colors.blue1}
+            description="Ultimos 60 dias"
+            status=""
+            type=""
+            value={summary.ultimos60Dias || 0}
+            backgroundColor=""
+            cardBackground={colors.white}
+            width="200px"
+            paddingBottom="40px"
+          />
+          <DashboardCard
+            boxShadow="0px 7px 30px rgba(0, 0, 0, 0.1)"
+            titleColor={colors.gray900}
+            textColor={colors.blue1}
+            description="Ultimos 90 dias"
+            status=""
+            type=""
+            value={summary.ultimos90Dias || 0}
+            backgroundColor=""
+            cardBackground={colors.white}
+            width="200px"
+            paddingBottom="40px"
+          />
+          <DashboardCard
+            boxShadow="0px 7px 30px rgba(0, 0, 0, 0.1)"
+            titleColor={colors.gray900}
+            textColor={colors.blue1}
+            description="Ultimos 120 dias"
+            status=""
+            type=""
+            value={summary.ultimos120Dias || 0}
+            backgroundColor=""
+            cardBackground={colors.white}
+            width="200px"
             paddingBottom="40px"
           />
         </StyledContainerTable>

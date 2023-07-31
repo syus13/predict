@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { colors } from '../../../themeColors'
 
-export const StyledButtonLogin = styled.div`
+export const StyledButtonLogin = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;

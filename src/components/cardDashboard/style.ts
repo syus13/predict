@@ -7,9 +7,8 @@ export const StyledDashboardCard = styled.div<{
   boxShadow?: string
 }>`
   font-family: Poppins;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
-  line-height: 150%;
   letter-spacing: 0.2px;
   display: flex;
   justify-content: space-start;
@@ -17,7 +16,7 @@ export const StyledDashboardCard = styled.div<{
   background: ${({ backgroundColor }) => `${backgroundColor}`};
   width: ${({ width }) => `${width}`};
   border-radius: 18px;
-  height: 90px;
+  height: 70px;
   padding: 18px 8px 8px 8px;
   padding-bottom: ${({ paddingBottom }) => `${paddingBottom}`};
   box-shadow: ${({ boxShadow }) => `${boxShadow}`};

@@ -10,7 +10,7 @@ import GetProductsDashboard, {
   GetProductsProps
 } from '@/apiRequest/getSummaryDashboard/product'
 import GetClientsDashboard from '@/apiRequest/getSummaryDashboard/client'
-import { chevronRight, everyUser, facialCleanser } from '@/assets/icons'
+import { chevronRight, everyUser, facialCleanserBlue } from '@/assets/icons'
 import ProductsTable from '@/components/productsTable'
 const ProductsTableTitle = ['ID', 'Produto', 'Percentual', ' ']
 const ClientTableTitle = ['ID', 'Cliente', 'Percentual', ' ']
@@ -112,7 +112,7 @@ export default function DashboardPage() {
               fontSize="16px"
               background={colors.blue4}
               color={colors.gray900}
-              icon={<img src={facialCleanser} color={colors.blue1} />}
+              icon={<img src={facialCleanserBlue} />}
               title="Produtos"
             />
           }
@@ -129,7 +129,7 @@ export default function DashboardPage() {
             <TableRow
               key={dashboardData.id}
               dashboardData={dashboardData}
-              url={`/informacoesprodutos/${dashboardData.id}`}
+              url={`/informationproducts/${dashboardData.id}`}
               navigate={goToPage}
             />
           ))}
@@ -159,7 +159,7 @@ export default function DashboardPage() {
             <TableRow
               key={dashboardData.id}
               dashboardData={dashboardData}
-              url={`/informacoesprodutosclientes/${dashboardData.id}`}
+              url={`/informationproductscustomers/${dashboardData.id}`}
               navigate={goToPage}
             />
           ))}

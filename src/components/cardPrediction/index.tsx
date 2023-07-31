@@ -22,7 +22,7 @@ export default function CardPrediction({
   const commonLinkProps = {
     marginLeft: '0px',
     color: colors.gray900,
-    to: `/informacoesclientes/${id}`
+    to: `/customerinformation/${id}`
   }
 
   return (

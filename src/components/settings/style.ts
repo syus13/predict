@@ -5,7 +5,7 @@ export const StyledSettings = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  margin-top: 85px;
+  margin-top: 50px;
   z-index: 1001;
   margin-right: 20px;
   width: 175px;

@@ -11,7 +11,7 @@ export const StyledClientPredictionTable = styled.table`
 
   thead,
   tbody {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 400;
     text-align: center;
   }

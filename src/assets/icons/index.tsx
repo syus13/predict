@@ -5,10 +5,12 @@ import chartLine from './chartLine.svg'
 import chevronDown from './chevronDown.svg'
 import chevronLeft from './chevronLeft.svg'
 import chevronRight from './chevronRight.svg'
-import everyUser from './everyUSer.svg'
+import everyUser from './everyUser.svg'
 import eye from './eye.svg'
 import eyeOffLine from './eyeOffLine.svg'
-import facialCleanser from './facialCleanser.svg'
+import facialCleanserBlue from './facialCleanserBlue.svg'
+import facialCleanserRed from './facialCleanserRed.svg'
+import facialCleanserWhite from './facialCleanserWhite.svg'
 import filterIcon from './filter.svg'
 import history from './history.svg'
 import logout from './logout.svg'
@@ -19,7 +21,7 @@ import research from './research.svg'
 import settingTwo from './settingTwo.svg'
 import trendingDown from './trendingDown.svg'
 import trendingUp from './trendingUp.svg'
-import user from './user.svg'
+import user from './userImg.svg'
 import userCard from './userCard.svg'
 
 export {
@@ -33,7 +35,9 @@ export {
   everyUser,
   eye,
   eyeOffLine,
-  facialCleanser,
+  facialCleanserBlue,
+  facialCleanserRed,
+  facialCleanserWhite,
   filterIcon,
   history,
   logout,

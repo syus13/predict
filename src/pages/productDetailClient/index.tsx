@@ -32,6 +32,8 @@ export default function ProductInformationClientDetail() {
       try {
         const resultLow = await GetProductStatus(id!, 'EM_BAIXA')
         const resultInHigh = await GetProductStatus(id!, 'EM_ALTA')
+        console.log(resultLow, resultInHigh, 'teste de log')
+
         setProductLow(resultLow)
         setProductInHigh(resultInHigh)
       } catch (error) {
@@ -64,7 +66,7 @@ export default function ProductInformationClientDetail() {
           <StyledLinkMenu
             marginLeft="0px"
             color={colors.gray900}
-            to="/produtos"
+            to="/dashboard"
           >
             <TitleIcon
               fontSize="16px"
@@ -79,6 +81,8 @@ export default function ProductInformationClientDetail() {
         </StyledContainerTable>
         <StyledContainerTable>
           <Title
+            fFamily="Sora"
+            fWeight={700}
             text={summary.nome || ''}
             size={24}
             color={colors.blue1}
@@ -98,6 +102,59 @@ export default function ProductInformationClientDetail() {
             backgroundColor=""
             cardBackground={colors.blue1}
             width="210px"
+            paddingBottom="40px"
+          />
+          <DashboardCard
+            boxShadow="0px 7px 30px rgba(0, 0, 0, 0.1)"
+            titleColor={colors.gray900}
+            textColor={colors.blue1}
+            description="Ultimos 30 dias"
+            status=""
+            type=""
+            value={summary.ultimos30Dias || 0}
+            percentage={summary?.percentualUltimos30Dias || 0}
+            backgroundColor={colors.success}
+            cardBackground={colors.white}
+            width="200px"
+            paddingBottom="40px"
+          />
+          <DashboardCard
+            boxShadow="0px 7px 30px rgba(0, 0, 0, 0.1)"
+            titleColor={colors.gray900}
+            textColor={colors.blue1}
+            description="Ultimos 60 dias"
+            status=""
+            type=""
+            value={summary.ultimos60Dias || 0}
+            backgroundColor=""
+            cardBackground={colors.white}
+            width="200px"
+            paddingBottom="40px"
+          />
+          <DashboardCard
+            boxShadow="0px 7px 30px rgba(0, 0, 0, 0.1)"
+            titleColor={colors.gray900}
+            textColor={colors.blue1}
+            description="Ultimos 90 dias"
+            status=""
+            type=""
+            value={summary.ultimos90Dias || 0}
+            backgroundColor=""
+            cardBackground={colors.white}
+            width="200px"
+            paddingBottom="40px"
+          />
+          <DashboardCard
+            boxShadow="0px 7px 30px rgba(0, 0, 0, 0.1)"
+            titleColor={colors.gray900}
+            textColor={colors.blue1}
+            description="Ultimos 120 dias"
+            status=""
+            type=""
+            value={summary.ultimos120Dias || 0}
+            backgroundColor=""
+            cardBackground={colors.white}
+            width="200px"
             paddingBottom="40px"
           />
         </StyledContainerTable>

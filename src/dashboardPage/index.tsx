@@ -54,7 +54,7 @@ export default function Dashboard({ date, setDate }: CalendarProps) {
             backgroundColor={colors.success}
             cardBackground={colors.blueCard}
             textColor={colors.white}
-            width="250px"
+            width="235px"
           />
           <DashboardCard
             description="Total"
@@ -71,7 +71,7 @@ export default function Dashboard({ date, setDate }: CalendarProps) {
             backgroundColor={colors.error}
             cardBackground={colors.blueCard}
             textColor={colors.white}
-            width="250px"
+            width="235px"
           />
           <DashboardCard
             description="Total"
@@ -88,7 +88,7 @@ export default function Dashboard({ date, setDate }: CalendarProps) {
             backgroundColor={colors.success}
             cardBackground={colors.blueCard}
             textColor={colors.white}
-            width="250px"
+            width="235px"
           />
           <DashboardCard
             description="Total"
@@ -105,7 +105,7 @@ export default function Dashboard({ date, setDate }: CalendarProps) {
             backgroundColor={colors.error}
             cardBackground={colors.blueCard}
             textColor={colors.white}
-            width="250px"
+            width="235px"
           />
         </StyledCardContainer>
       </StyledDashboard>
