@@ -53,10 +53,14 @@ export default function ProductPage() {
     <div>
       <StyledProductsContainer>
         <Title
+          fFamily="Sora"
+          fWeight={600}
           marginLeft="28px"
           text="Produtos"
           size={32}
           color={colors.gray900}
+          marginTop="130px"
+          marginBottom="-80px"
         />
         <StyledProductsContainer>
           <ProductsTable

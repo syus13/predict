@@ -7,6 +7,7 @@ interface StyledTitleProps {
   marginLeft: string
   family?: string
   weight?: number
+  marginTop?: string
 }
 
 export const StyledTitle = styled.h1<StyledTitleProps>`
@@ -16,4 +17,5 @@ export const StyledTitle = styled.h1<StyledTitleProps>`
   margin-bottom: ${({ marginBottom }) => marginBottom};
   margin-left: ${({ marginLeft }) => marginLeft};
   font-family: ${({ family }) => family};
+  margin-top: ${({ marginTop }) => marginTop};
 `

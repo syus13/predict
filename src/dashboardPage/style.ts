@@ -26,7 +26,7 @@ export const StyledDashboard = styled.div`
   background: ${colors.blue1};
   border-radius: 24px;
   padding: 30px;
-  width: 1050px;
+  width: 1200px;
 
   h1 {
     color: ${colors.white};
@@ -40,6 +40,7 @@ export const StyledDashboardContainer = styled.div`
   padding: 22px;
   width: 100%;
   background: ${colors.white};
+  margin-top: 50px;
 `
 
 export const StyledCardContainer = styled.div`

@@ -5,6 +5,7 @@ export const StyledSubTitle = styled.div<{
   color: string
   fontWeight: number
 }>`
+  font-family: 'Poppins';
   font-size: ${({ size }) => `${size}px`};
   color: ${({ color }) => `${color}`};
   font-weight: ${({ fontWeight }) => `${fontWeight}`};

@@ -9,6 +9,7 @@ type TitleProps = {
   marginBottom?: string
   fFamily?: string
   fWeight?: number
+  marginTop?: string
 }
 
 type CardTitleProps = {
@@ -25,7 +26,8 @@ export default function Title({
   marginLeft,
   marginBottom,
   fFamily,
-  fWeight
+  fWeight,
+  marginTop
 }: TitleProps) {
   return (
     <StyledTitle
@@ -35,6 +37,7 @@ export default function Title({
       color={color}
       family={fFamily}
       weight={fWeight}
+      marginTop={marginTop}
     >
       {text}
     </StyledTitle>

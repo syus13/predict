@@ -12,7 +12,7 @@ export const ChevronIcon = styled.div`
 `
 
 export const ClientCardContainer = styled.div`
-  width: 360px;
+  width: 236px;
   height: auto;
   padding: 16px;
   border-radius: 20px;
